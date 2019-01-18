@@ -28,4 +28,9 @@
 }
 
 
+- (IBAction)tvEmail:(id)sender {
+}
+
+- (IBAction)tvPass:(id)sender {
+}
 @end

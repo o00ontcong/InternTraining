@@ -13,6 +13,7 @@
 		488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488B2A8C21EED5BA00C2167B /* Assets.xcassets */; };
 		488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488B2A8E21EED5BA00C2167B /* LaunchScreen.storyboard */; };
 		488B2A9321EED5BA00C2167B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488B2A9221EED5BA00C2167B /* main.m */; };
+		9373081421F16DB0001133D2 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373081321F16DB0001133D2 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		488B2A8F21EED5BA00C2167B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		488B2A9121EED5BA00C2167B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488B2A9221EED5BA00C2167B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9373081221F16DB0001133D2 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		9373081321F16DB0001133D2 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				488B2A8E21EED5BA00C2167B /* LaunchScreen.storyboard */,
 				488B2A9121EED5BA00C2167B /* Info.plist */,
 				488B2A9221EED5BA00C2167B /* main.m */,
+				9373081221F16DB0001133D2 /* SignUpViewController.h */,
+				9373081321F16DB0001133D2 /* SignUpViewController.m */,
 			);
 			path = InternTraining;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			files = (
 				488B2A8821EED5B900C2167B /* ViewController.m in Sources */,
 				488B2A9321EED5BA00C2167B /* main.m in Sources */,
+				9373081421F16DB0001133D2 /* SignUpViewController.m in Sources */,
 				488B2A8521EED5B900C2167B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
