@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SignUpViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *test;
+- (IBAction)closeCurrentView:(id)sender;
+
 
 @end

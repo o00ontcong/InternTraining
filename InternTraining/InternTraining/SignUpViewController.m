@@ -10,15 +10,19 @@
 
 @interface SignUpViewController ()
 
+
 @end
 
 @implementation SignUpViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBar.hidden = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,4 +67,8 @@ typedef enum : NSUInteger {
     }
 }
 
+- (IBAction)closeCurrentView:(id)sender {
+    _test.text=@"Its Budshit";
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

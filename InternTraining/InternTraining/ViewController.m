@@ -10,16 +10,20 @@
 
 @interface ViewController ()
 
+
 @end
+
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-}
 
+}
+- (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -28,9 +32,6 @@
 }
 
 
-- (IBAction)tvEmail:(id)sender {
-}
-
-- (IBAction)tvPass:(id)sender {
-}
+     
 @end
+    
