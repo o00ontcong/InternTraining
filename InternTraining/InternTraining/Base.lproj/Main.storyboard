@@ -20,20 +20,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-8S-jOW">
-                                <rect key="frame" x="41" y="388" width="310" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-8S-jOW">
+                                <rect key="frame" x="33" y="472" width="310" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="TBf-MQ-FKi"/>
-                                    <constraint firstAttribute="width" constant="310" id="Tu7-cx-2Vx"/>
-                                    <constraint firstAttribute="width" secondItem="YeI-8S-jOW" secondAttribute="height" multiplier="159:29" id="bON-pS-Itu"/>
+                                    <constraint firstAttribute="width" constant="310" id="2Gy-Lj-rFw"/>
+                                    <constraint firstAttribute="height" constant="50" id="lJV-Hj-qh5"/>
                                 </constraints>
-                                <state key="normal" title="Login" image="LoginButton"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="LOGIN" backgroundImage="Rectangle-btn-login"/>
                                 <connections>
                                     <segue destination="r3r-ED-3Om" kind="modal" id="W1h-4A-wcc"/>
                                 </connections>
                             </button>
-                            <button clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="648-bp-i4G">
-                                <rect key="frame" x="41" y="467" width="311" height="58"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TreeVector" translatesAutoresizingMaskIntoConstraints="NO" id="DQP-jd-A5x">
+                                <rect key="frame" x="0.0" y="44" width="335" height="272"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DQP-jd-A5x" secondAttribute="height" multiplier="335:272" id="kSB-cK-ObH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wl1-AA-DSp">
+                                <rect key="frame" x="144" y="650" width="87" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="4lg-ti-KOx"/>
+                                    <constraint firstAttribute="width" constant="87" id="L5C-ay-79H"/>
+                                </constraints>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="footer" translatesAutoresizingMaskIntoConstraints="NO" id="48M-DN-x2o">
+                                <rect key="frame" x="144" y="651" width="87" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="8SS-A6-fdC"/>
+                                    <constraint firstAttribute="height" constant="74" id="efj-Nc-Ga6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Yar-77-2MW">
+                                <rect key="frame" x="92" y="222" width="190" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Fep-dr-JLK"/>
+                                    <constraint firstAttribute="width" constant="190" id="qaT-jP-tdk"/>
+                                </constraints>
+                            </imageView>
+                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="648-bp-i4G">
+                                <rect key="frame" x="33" y="530" width="310" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="L1k-GR-c6m"/>
+                                    <constraint firstAttribute="height" constant="50" id="p8a-jV-46m"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SIGN UP" backgroundImage="Rectangle 14 Copy">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,13 +76,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="648-bp-i4G" firstAttribute="width" secondItem="YeI-8S-jOW" secondAttribute="width" id="3er-lv-ZaD"/>
-                            <constraint firstItem="648-bp-i4G" firstAttribute="top" secondItem="YeI-8S-jOW" secondAttribute="bottom" constant="32" id="4rk-vK-AaE"/>
-                            <constraint firstItem="YeI-8S-jOW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="5oU-PS-YWp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YeI-8S-jOW" secondAttribute="trailing" constant="55" id="LL8-WW-Gzc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YeI-8S-jOW" secondAttribute="bottom" constant="332" id="Qiw-4O-f9c"/>
-                            <constraint firstItem="648-bp-i4G" firstAttribute="height" secondItem="YeI-8S-jOW" secondAttribute="height" id="l0n-oW-cqF"/>
-                            <constraint firstItem="648-bp-i4G" firstAttribute="centerX" secondItem="YeI-8S-jOW" secondAttribute="centerX" id="tec-tL-0Od"/>
+                            <constraint firstItem="DQP-jd-A5x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2fy-R4-aF3"/>
+                            <constraint firstItem="Wl1-AA-DSp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JF7-kT-x2d"/>
+                            <constraint firstItem="YeI-8S-jOW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="P0e-VW-jnu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="48M-DN-x2o" secondAttribute="bottom" constant="53" id="QlV-8N-P8C"/>
+                            <constraint firstItem="Yar-77-2MW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="178" id="Y4T-Pz-S2U"/>
+                            <constraint firstItem="648-bp-i4G" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a46-7k-CLW"/>
+                            <constraint firstItem="48M-DN-x2o" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dDR-rJ-aPj"/>
+                            <constraint firstItem="Yar-77-2MW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="gYV-zf-zNH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wl1-AA-DSp" secondAttribute="bottom" constant="54" id="ged-R1-eJv"/>
+                            <constraint firstItem="648-bp-i4G" firstAttribute="top" secondItem="YeI-8S-jOW" secondAttribute="bottom" constant="8" id="gk6-vF-obq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DQP-jd-A5x" secondAttribute="trailing" constant="40" id="l9y-vy-yQc"/>
+                            <constraint firstItem="YeI-8S-jOW" firstAttribute="top" secondItem="Yar-77-2MW" secondAttribute="bottom" constant="30" id="w5i-n4-Daw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yar-77-2MW" secondAttribute="trailing" constant="93" id="xB1-HG-kNY"/>
+                            <constraint firstItem="DQP-jd-A5x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yKg-iN-MvY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -390,6 +428,8 @@
     <resources>
         <image name="LoginButton" width="310" height="50"/>
         <image name="Rectangle 14 Copy" width="318" height="58"/>
+        <image name="Rectangle-btn-login" width="318" height="58"/>
+        <image name="TreeVector" width="323" height="260"/>
         <image name="close-btn" width="24" height="24"/>
         <image name="footer" width="87" height="74"/>
         <image name="logo" width="161" height="188"/>
