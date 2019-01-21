@@ -11,6 +11,7 @@
 @interface SignUpViewController ()
 
 
+
 @end
 
 @implementation SignUpViewController
@@ -18,15 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self addBottomLineToUITextField];
+   
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -37,12 +43,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+//Add Buttom line to UITextField
+- (void) addBottomLineToUITextField{
+    [self addLineToView:self.fullNameTextField atPosition:LINE_POSITION_BOTTOM withColor:[UIColor colorWithRed:0.42 green:0.33 blue:0.76 alpha:1.0] lineWitdh:1];
+    [self addLineToView:self.emailTextField atPosition:LINE_POSITION_BOTTOM withColor:[UIColor colorWithRed:0.42 green:0.33 blue:0.76 alpha:1.0] lineWitdh:1];
+    [self addLineToView:self.passwordTextField atPosition:LINE_POSITION_BOTTOM withColor:[UIColor colorWithRed:0.42 green:0.33 blue:0.76 alpha:1.0] lineWitdh:1];
+    [self addLineToView:self.confirmPasswordTextField atPosition:LINE_POSITION_BOTTOM withColor:[UIColor colorWithRed:0.42 green:0.33 blue:0.76 alpha:1.0] lineWitdh:1];
+}
+
+
 //UITextField must contain an auto layout to use this method
 typedef enum : NSUInteger {
     LINE_POSITION_TOP,
     LINE_POSITION_BOTTOM
 } LINE_POSITION;
-
 
 - (void) addLineToView:(UIView *)view atPosition:(LINE_POSITION)position withColor:(UIColor *)color lineWitdh:(CGFloat)width {
     // Add line
@@ -67,8 +81,8 @@ typedef enum : NSUInteger {
     }
 }
 
+
 - (IBAction)closeCurrentView:(id)sender {
-    _test.text=@"Its Budshit";
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

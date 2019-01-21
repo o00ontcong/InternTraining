@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *signUpBtn;
-- (IBAction)openSignUpViewController:(id)sender;
-
 
 @end
 

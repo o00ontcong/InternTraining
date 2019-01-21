@@ -194,9 +194,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLI-eA-hhP">
-                                <rect key="frame" x="30" y="59.333333333333329" width="24" height="24"/>
+                                <rect key="frame" x="30" y="59.333333333333343" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="Gge-LB-jRA"/>
+                                    <constraint firstAttribute="width" constant="24" id="Gge-LB-jRA"/>
                                     <constraint firstAttribute="height" constant="24" id="lYV-CO-26Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
@@ -227,7 +227,7 @@
                                                 <color key="textColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="Color Kanji Application" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqa-Wv-OwD">
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="Color Kanji Application" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqa-Wv-OwD">
                                                 <rect key="frame" x="0.0" y="14" width="289.33333333333331" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Hts-oX-anO"/>
@@ -251,7 +251,7 @@
                                                 <color key="textColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="info@kanji.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-Tn-wCv">
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="info@kanji.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-Tn-wCv">
                                                 <rect key="frame" x="0.0" y="14" width="289.33333333333331" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="k5r-YF-XCr"/>
@@ -275,7 +275,7 @@
                                                 <color key="textColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4P2-c8-l2h">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4P2-c8-l2h">
                                                 <rect key="frame" x="0.0" y="14" width="289.33333333333331" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="289" id="7uL-Kf-ykO"/>
@@ -299,7 +299,7 @@
                                                 <color key="textColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9S1-lX-x3A">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" text="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9S1-lX-x3A">
                                                 <rect key="frame" x="0.0" y="14" width="289" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="289" id="1yI-wm-f6i"/>
@@ -358,6 +358,12 @@
                         <viewLayoutGuide key="safeArea" id="sbo-NI-NWB"/>
                     </view>
                     <navigationItem key="navigationItem" id="6LY-bH-k7l"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="9S1-lX-x3A" id="vfE-bL-j0R"/>
+                        <outlet property="emailTextField" destination="z0x-Tn-wCv" id="vPJ-EI-4Kz"/>
+                        <outlet property="fullNameTextField" destination="hqa-Wv-OwD" id="3ug-Vu-dAr"/>
+                        <outlet property="passwordTextField" destination="4P2-c8-l2h" id="8Ld-z4-8Oe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgJ-N3-Qg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
