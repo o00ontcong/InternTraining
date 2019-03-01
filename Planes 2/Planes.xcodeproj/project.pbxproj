@@ -13,6 +13,17 @@
 		8A064B07222384F6001EF16C /* SectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A064B01222384F6001EF16C /* SectionHeaderCollectionReusableView.swift */; };
 		8A064B08222384F6001EF16C /* SeatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A064B02222384F6001EF16C /* SeatCollectionViewCell.swift */; };
 		8A064B09222384F6001EF16C /* Eticket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A064B03222384F6001EF16C /* Eticket.storyboard */; };
+		8A223D41222781F700712446 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A223D3D222781F600712446 /* ItemCollectionViewCell.xib */; };
+		8A223D42222781F700712446 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D3E222781F700712446 /* CustomLayout.swift */; };
+		8A223D43222781F700712446 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D3F222781F700712446 /* ImageViewerViewController.swift */; };
+		8A223D44222781F700712446 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D40222781F700712446 /* ItemCollectionViewCell.swift */; };
+		8A223D512227952000712446 /* IndexReturnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D4D2227951F00712446 /* IndexReturnable.swift */; };
+		8A223D522227952000712446 /* DummyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D4E2227951F00712446 /* DummyDataSource.swift */; };
+		8A223D532227952000712446 /* GenericViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D4F2227952000712446 /* GenericViewModel.swift */; };
+		8A223D542227952000712446 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D502227952000712446 /* CustomSegmentedControl.swift */; };
+		8A223D5D2227DAC500712446 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D5A2227DAC400712446 /* VideoViewController.swift */; };
+		8A223D5E2227DAC500712446 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A223D5B2227DAC400712446 /* FavoriteViewController.swift */; };
+		8A230FB12223838600DAC948 /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A230FB02223838600DAC948 /* UIDropDown.swift */; };
 		8A362761221BC93E001F6B77 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A362760221BC93E001F6B77 /* CustomView.swift */; };
 		8ABBC2C6221BBB8900388D7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBC2C5221BBB8900388D7A /* AppDelegate.swift */; };
 		8ABBC2D0221BBB8A00388D7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABBC2CE221BBB8A00388D7A /* LaunchScreen.storyboard */; };
@@ -26,16 +37,6 @@
 		8ABBC2FE221BBC4500388D7A /* SearchCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBC2FD221BBC4500388D7A /* SearchCell1.swift */; };
 		8ABBC300221BBC5100388D7A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBC2FF221BBC5100388D7A /* SearchTableViewCell.swift */; };
 		8ABBC302221BBC5600388D7A /* SearchTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBC301221BBC5600388D7A /* SearchTableViewCell1.swift */; };
-		8ABBC306221BBC7100388D7A /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABBC303221BBC7100388D7A /* CustomCollectionViewCell.swift */; };
-		9340A4A82223A1F600F4CA9A /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4A52223A1F500F4CA9A /* Ticket.swift */; };
-		9340A4B62223A22F00F4CA9A /* BSStackViewConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4AC2223A22D00F4CA9A /* BSStackViewConstraints.m */; };
-		9340A4B72223A22F00F4CA9A /* BSStackViewLayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4AE2223A22E00F4CA9A /* BSStackViewLayoutHelper.m */; };
-		9340A4B82223A22F00F4CA9A /* BSStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4B42223A22F00F4CA9A /* BSStackView.m */; };
-		9340A4B92223A22F00F4CA9A /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4B52223A22F00F4CA9A /* EXTScope.m */; };
-		9340A4BE2223A26F00F4CA9A /* TicketCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9340A4BB2223A26F00F4CA9A /* TicketCardView.xib */; };
-		9340A4BF2223A26F00F4CA9A /* EticketCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4BC2223A26F00F4CA9A /* EticketCardView.swift */; };
-		9340A4C02223A26F00F4CA9A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9340A4BD2223A26F00F4CA9A /* UIView.swift */; };
-		936D30B92223CBF4004045A9 /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D30B82223CBF3004045A9 /* UIDropDown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,17 @@
 		8A064B01222384F6001EF16C /* SectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		8A064B02222384F6001EF16C /* SeatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeatCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A064B03222384F6001EF16C /* Eticket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eticket.storyboard; sourceTree = "<group>"; };
+		8A223D3D222781F600712446 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemCollectionViewCell.xib; path = ../../../../Downloads/completed/Dogstagram/ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		8A223D3E222781F700712446 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLayout.swift; path = ../../../../Downloads/completed/Dogstagram/CustomLayout.swift; sourceTree = "<group>"; };
+		8A223D3F222781F700712446 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewerViewController.swift; path = ../../../../Downloads/completed/Dogstagram/ImageViewerViewController.swift; sourceTree = "<group>"; };
+		8A223D40222781F700712446 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCollectionViewCell.swift; path = ../../../../Downloads/completed/Dogstagram/ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A223D4D2227951F00712446 /* IndexReturnable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexReturnable.swift; sourceTree = "<group>"; };
+		8A223D4E2227951F00712446 /* DummyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDataSource.swift; sourceTree = "<group>"; };
+		8A223D4F2227952000712446 /* GenericViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewModel.swift; sourceTree = "<group>"; };
+		8A223D502227952000712446 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		8A223D5A2227DAC400712446 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../../../../Downloads/TabbarApp/TabbarApp/VideoViewController.swift; sourceTree = "<group>"; };
+		8A223D5B2227DAC400712446 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = ../../../../Downloads/TabbarApp/TabbarApp/FavoriteViewController.swift; sourceTree = "<group>"; };
+		8A230FB02223838600DAC948 /* UIDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIDropDown.swift; path = "../../../../Downloads/UIDropDown-master 2/ExampleApp/UIDropDown/UIDropDown.swift"; sourceTree = "<group>"; };
 		8A362760221BC93E001F6B77 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		8ABBC2C2221BBB8900388D7A /* Planes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ABBC2C5221BBB8900388D7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,23 +93,6 @@
 		8ABBC2FD221BBC4500388D7A /* SearchCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell1.swift; sourceTree = "<group>"; };
 		8ABBC2FF221BBC5100388D7A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8ABBC301221BBC5600388D7A /* SearchTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell1.swift; sourceTree = "<group>"; };
-		8ABBC303221BBC7100388D7A /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
-		9340A4A52223A1F500F4CA9A /* Ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
-		9340A4AB2223A22D00F4CA9A /* Planes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Planes-Bridging-Header.h"; sourceTree = "<group>"; };
-		9340A4AC2223A22D00F4CA9A /* BSStackViewConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStackViewConstraints.m; sourceTree = "<group>"; };
-		9340A4AD2223A22D00F4CA9A /* BSStackViewLayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStackViewLayoutHelper.h; sourceTree = "<group>"; };
-		9340A4AE2223A22E00F4CA9A /* BSStackViewLayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStackViewLayoutHelper.m; sourceTree = "<group>"; };
-		9340A4AF2223A22E00F4CA9A /* BSStackViewConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStackViewConstraints.h; sourceTree = "<group>"; };
-		9340A4B02223A22E00F4CA9A /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
-		9340A4B12223A22E00F4CA9A /* BSStackViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStackViewProtocol.h; sourceTree = "<group>"; };
-		9340A4B22223A22E00F4CA9A /* BSStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSStackView.h; sourceTree = "<group>"; };
-		9340A4B32223A22F00F4CA9A /* EXTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTScope.h; sourceTree = "<group>"; };
-		9340A4B42223A22F00F4CA9A /* BSStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStackView.m; sourceTree = "<group>"; };
-		9340A4B52223A22F00F4CA9A /* EXTScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTScope.m; sourceTree = "<group>"; };
-		9340A4BB2223A26F00F4CA9A /* TicketCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketCardView.xib; sourceTree = "<group>"; };
-		9340A4BC2223A26F00F4CA9A /* EticketCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EticketCardView.swift; sourceTree = "<group>"; };
-		9340A4BD2223A26F00F4CA9A /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		936D30B82223CBF3004045A9 /* UIDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDropDown.swift; path = Planes/UIDropDown.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				8ABBC2F7221BBC0700388D7A /* HomeViewController.swift */,
-				8ABBC303221BBC7100388D7A /* CustomCollectionViewCell.swift */,
+				8A223D3E222781F700712446 /* CustomLayout.swift */,
+				8A223D3F222781F700712446 /* ImageViewerViewController.swift */,
+				8A223D40222781F700712446 /* ItemCollectionViewCell.swift */,
+				8A223D3D222781F600712446 /* ItemCollectionViewCell.xib */,
+				8A223D5B2227DAC400712446 /* FavoriteViewController.swift */,
+				8A223D5A2227DAC400712446 /* VideoViewController.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -158,8 +158,12 @@
 			children = (
 				8A064AFC2223843A001EF16C /* Cell */,
 				8ABBC2F9221BBC2A00388D7A /* SearchViewController.swift */,
-				936D30B82223CBF3004045A9 /* UIDropDown.swift */,
 				8A362760221BC93E001F6B77 /* CustomView.swift */,
+				8A230FB02223838600DAC948 /* UIDropDown.swift */,
+				8A223D4E2227951F00712446 /* DummyDataSource.swift */,
+				8A223D4F2227952000712446 /* GenericViewModel.swift */,
+				8A223D4D2227951F00712446 /* IndexReturnable.swift */,
+				8A223D502227952000712446 /* CustomSegmentedControl.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -168,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				8A064AFF222384F5001EF16C /* EticketViewController.swift */,
-				8A064B03222384F6001EF16C /* Eticket.storyboard */,
 			);
 			path = EticketView;
 			sourceTree = "<group>";
@@ -176,7 +179,6 @@
 		8A5D03A722238FC200205E45 /* PickSeatView */ = {
 			isa = PBXGroup;
 			children = (
-				8A064B00222384F5001EF16C /* PickSeat.storyboard */,
 				8A064AFE222384F5001EF16C /* PickSeatViewController.swift */,
 				8A064B02222384F6001EF16C /* SeatCollectionViewCell.swift */,
 				8A064B01222384F6001EF16C /* SectionHeaderCollectionReusableView.swift */,
@@ -207,19 +209,17 @@
 		8ABBC2C4221BBB8900388D7A /* Planes */ = {
 			isa = PBXGroup;
 			children = (
-				9340A4C12223A27600F4CA9A /* CardView */,
-				9340A4BA2223A24700F4CA9A /* BSStackView */,
 				8ABBC2C5221BBB8900388D7A /* AppDelegate.swift */,
-				9340A4A52223A1F500F4CA9A /* Ticket.swift */,
 				8A230FAC2223834600DAC948 /* HomeView */,
 				8A230FAD2223836D00DAC948 /* SearchView */,
 				8A5D03A722238FC200205E45 /* PickSeatView */,
 				8A5D03A622238F9A00205E45 /* EticketView */,
 				8ABBC2F5221BBBE500388D7A /* Main.storyboard */,
+				8A064B03222384F6001EF16C /* Eticket.storyboard */,
+				8A064B00222384F5001EF16C /* PickSeat.storyboard */,
 				8ABBC2CE221BBB8A00388D7A /* LaunchScreen.storyboard */,
 				8ABBC2F3221BBBCE00388D7A /* Media.xcassets */,
 				8ABBC2D1221BBB8A00388D7A /* Info.plist */,
-				9340A4AB2223A22D00F4CA9A /* Planes-Bridging-Header.h */,
 			);
 			path = Planes;
 			sourceTree = "<group>";
@@ -240,33 +240,6 @@
 				8ABBC2E7221BBB8A00388D7A /* Info.plist */,
 			);
 			path = PlanesUITests;
-			sourceTree = "<group>";
-		};
-		9340A4BA2223A24700F4CA9A /* BSStackView */ = {
-			isa = PBXGroup;
-			children = (
-				9340A4B22223A22E00F4CA9A /* BSStackView.h */,
-				9340A4B42223A22F00F4CA9A /* BSStackView.m */,
-				9340A4AF2223A22E00F4CA9A /* BSStackViewConstraints.h */,
-				9340A4AC2223A22D00F4CA9A /* BSStackViewConstraints.m */,
-				9340A4AD2223A22D00F4CA9A /* BSStackViewLayoutHelper.h */,
-				9340A4AE2223A22E00F4CA9A /* BSStackViewLayoutHelper.m */,
-				9340A4B12223A22E00F4CA9A /* BSStackViewProtocol.h */,
-				9340A4B32223A22F00F4CA9A /* EXTScope.h */,
-				9340A4B52223A22F00F4CA9A /* EXTScope.m */,
-				9340A4B02223A22E00F4CA9A /* metamacros.h */,
-			);
-			path = BSStackView;
-			sourceTree = "<group>";
-		};
-		9340A4C12223A27600F4CA9A /* CardView */ = {
-			isa = PBXGroup;
-			children = (
-				9340A4BC2223A26F00F4CA9A /* EticketCardView.swift */,
-				9340A4BB2223A26F00F4CA9A /* TicketCardView.xib */,
-				9340A4BD2223A26F00F4CA9A /* UIView.swift */,
-			);
-			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,7 +310,6 @@
 				TargetAttributes = {
 					8ABBC2C1221BBB8900388D7A = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
 					};
 					8ABBC2D5221BBB8A00388D7A = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -376,8 +348,8 @@
 			files = (
 				8ABBC2F6221BBBE500388D7A /* Main.storyboard in Resources */,
 				8A064B09222384F6001EF16C /* Eticket.storyboard in Resources */,
-				9340A4BE2223A26F00F4CA9A /* TicketCardView.xib in Resources */,
 				8ABBC2F4221BBBCE00388D7A /* Media.xcassets in Resources */,
+				8A223D41222781F700712446 /* ItemCollectionViewCell.xib in Resources */,
 				8A064B06222384F6001EF16C /* PickSeat.storyboard in Resources */,
 				8ABBC2D0221BBB8A00388D7A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -404,27 +376,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9340A4B92223A22F00F4CA9A /* EXTScope.m in Sources */,
-				9340A4B72223A22F00F4CA9A /* BSStackViewLayoutHelper.m in Sources */,
-				9340A4BF2223A26F00F4CA9A /* EticketCardView.swift in Sources */,
-				936D30B92223CBF4004045A9 /* UIDropDown.swift in Sources */,
 				8ABBC2FE221BBC4500388D7A /* SearchCell1.swift in Sources */,
-				9340A4B82223A22F00F4CA9A /* BSStackView.m in Sources */,
-				9340A4B62223A22F00F4CA9A /* BSStackViewConstraints.m in Sources */,
+				8A223D5D2227DAC500712446 /* VideoViewController.swift in Sources */,
+				8A223D522227952000712446 /* DummyDataSource.swift in Sources */,
 				8A064B08222384F6001EF16C /* SeatCollectionViewCell.swift in Sources */,
 				8ABBC2FA221BBC2B00388D7A /* SearchViewController.swift in Sources */,
+				8A223D43222781F700712446 /* ImageViewerViewController.swift in Sources */,
 				8ABBC302221BBC5600388D7A /* SearchTableViewCell1.swift in Sources */,
-				8ABBC306221BBC7100388D7A /* CustomCollectionViewCell.swift in Sources */,
-				9340A4C02223A26F00F4CA9A /* UIView.swift in Sources */,
+				8A223D512227952000712446 /* IndexReturnable.swift in Sources */,
 				8A362761221BC93E001F6B77 /* CustomView.swift in Sources */,
-				9340A4A82223A1F600F4CA9A /* Ticket.swift in Sources */,
+				8A230FB12223838600DAC948 /* UIDropDown.swift in Sources */,
 				8A064B05222384F6001EF16C /* EticketViewController.swift in Sources */,
+				8A223D5E2227DAC500712446 /* FavoriteViewController.swift in Sources */,
+				8A223D532227952000712446 /* GenericViewModel.swift in Sources */,
 				8ABBC2FC221BBC3D00388D7A /* SearchCell.swift in Sources */,
+				8A223D42222781F700712446 /* CustomLayout.swift in Sources */,
 				8A064B04222384F6001EF16C /* PickSeatViewController.swift in Sources */,
 				8ABBC300221BBC5100388D7A /* SearchTableViewCell.swift in Sources */,
 				8A064B07222384F6001EF16C /* SectionHeaderCollectionReusableView.swift in Sources */,
+				8A223D44222781F700712446 /* ItemCollectionViewCell.swift in Sources */,
 				8ABBC2C6221BBB8900388D7A /* AppDelegate.swift in Sources */,
 				8ABBC2F8221BBC0700388D7A /* HomeViewController.swift in Sources */,
+				8A223D542227952000712446 /* CustomSegmentedControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +562,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Planes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -598,8 +570,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = anhtuan.com.Planes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Planes/Planes-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -609,7 +579,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Planes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,7 +587,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = anhtuan.com.Planes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Planes/Planes-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 import CoreGraphics
 class SearchViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
@@ -28,7 +29,7 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
     var array1: [SearchCell1] = []
     var moveAlongPath:CAAnimation!
    var drop: UIDropDown!
-
+    private var colorsGenericViewModel: GenericViewModel<UIColor>?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +37,31 @@ class SearchViewController: UIViewController,UITableViewDelegate,UITableViewData
         array1 = createArray1()
         
     }
+    
+    //MARK: 2 set this values for a selector with rounded appereance with text
+    @IBOutlet weak var textSegmentedControl: CustomSegmentedControl! {
+        didSet {
+            
+            //Set this booleans to adapt control
+            textSegmentedControl.itemsWithText = true
+            textSegmentedControl.fillEqually = true
+            textSegmentedControl.roundedControl = true
+            
+            let strings = DummyDataSource.textItems()
+            textSegmentedControl.setSegmentedWith(items: strings)
+            textSegmentedControl.padding = 2
+            textSegmentedControl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            textSegmentedControl.selectedTextColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            textSegmentedControl.thumbViewColor = #colorLiteral(red: 0.6, green: 0.4392156863, blue: 0.9294117647, alpha: 1)
+            textSegmentedControl.titlesFont = UIFont(name: "OpenSans-Semibold", size: 14)
+        }
+    }
+    
+  
+    
+   
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         addAnimation()
         initiateAnimation()

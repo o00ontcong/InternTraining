@@ -85,4 +85,17 @@ typedef enum : NSUInteger {
 - (IBAction)closeCurrentView:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)didPressSignUpButton:(id)sender {
+    NSString *fullName = _fullNameTextField.text;
+    NSString *email = _emailTextField.text;
+    NSString *password = _passwordTextField.text;
+    NSString *confirmPassword = _confirmPasswordTextField.text;
+    
+    if(password == confirmPassword && email != nil && fullName !=nil){
+        
+        
+    }
+    
+    
+}
 @end

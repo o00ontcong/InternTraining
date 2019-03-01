@@ -7,9 +7,14 @@
 //
 
 import UIKit
-
-class HomeViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
-    
+struct Item {
+    var imageName: String
+}
+class HomeViewController: UIViewController{
+    enum Mode {
+        case view
+        case select
+    }
     
     @IBOutlet weak var btnFlight: UIButton!
     
@@ -29,31 +34,53 @@ class HomeViewController: UIViewController,UICollectionViewDataSource,UICollecti
     
     //-----
     
-    @IBOutlet weak var collectionView1: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var collectionView2: UICollectionView!
-   
-    @IBOutlet weak var collectionView3: UICollectionView!
     //-----
-    var scrollingTimer = Timer()
     //-----
-    var dataArray:[String] = ["i1","i2","i3","i4"]
-    var dataArray2:[String] = ["r1","r2","r3","r4"]
-    var dataArray3:[String] = ["r5","r6","r7","r8"]
+    var items: [Item] = [Item(imageName: "i1"),
+                         Item(imageName: "r1"),
+                         Item(imageName: "r2"),
+                         Item(imageName: "r3"),
+                         Item(imageName: "i2"),
+                         Item(imageName: "i3"),
+                         Item(imageName: "r3"),
+                         Item(imageName: "r4"),
+                         Item(imageName: "r5"),
+                         Item(imageName: "r6"),
+                         Item(imageName: "r7"),
+                         Item(imageName: "i5"),
+                         Item(imageName: "i6"),
+                         Item(imageName: "i7"),
+                         Item(imageName: "i8"),
+                         Item(imageName: "i9"),
+                         Item(imageName: "i10"),
+                         Item(imageName: "i11"),
+                         Item(imageName: "r8")]
     
+    var collectionViewFlowLayout: UICollectionViewFlowLayout!
+    let cellIdentifier = "ItemCollectionViewCell"
+    let viewImageSegueIdentifier = "viewImageSegueIdentifier"
+    
+    
+    
+    
+    
+    lazy var deleteBarButton: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(didDeleteButtonClicked(_:)))
+        return barButtonItem
+    }()
+    
+    var dictionarySelectedIndecPath: [IndexPath: Bool] = [:]
+    
+    let lineSpacing: CGFloat = 5
+    let interItemSpacing: CGFloat = 5
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        setupCollectionView()
+        setupCollectionViewItemSize()
         //-----
-        collectionView1.delegate = self
-        collectionView1.dataSource = self
-        collectionView2.delegate = self
-        collectionView2.dataSource = self
-        collectionView3.delegate = self
-        collectionView3.dataSource = self
-        collectionView1.isPagingEnabled = true
-        collectionView2.isPagingEnabled = true
-        collectionView3.isPagingEnabled = true
+//       createTabBarController()
         //-----
         
     }
@@ -104,71 +131,111 @@ class HomeViewController: UIViewController,UICollectionViewDataSource,UICollecti
         
         self.present(myalert, animated: true)
     }
-    
+//    func createTabBarController() {
+//        let tabBarCnt = UITabBarController()
+//        tabBarCnt.tabBar.tintColor = UIColor.black
+//
+//        let firstVc = UIViewController()
+//        firstVc.title = "First"
+//        firstVc.tabBarItem = UITabBarItem.init(title: "", image: UIImage(named: "home"), tag: 0)
+//        let secondVc = FavoriteViewController()
+//        secondVc.title = "Second"
+//        secondVc.tabBarItem = UITabBarItem.init(title: "", image: UIImage(named: "profile"), tag: 1)
+//
+//        tabBarCnt.viewControllers = [firstVc, secondVc]
+////        let controllerArray = [firstVc, secondVc]
+////        tabBarCnt.viewControllers = controllerArray.map{ UINavigationController.init(rootViewController: $0)}
+////
+//
+//
+//        self.view.addSubview(tabBarCnt.view)
+//    }
     //***** MyImage
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch collectionView {
-        case collectionView1:
-            return dataArray.count
-        case collectionView2:
-            return dataArray2.count
-        case collectionView3:
-            return dataArray3.count
-        default:
-            return 0
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let item = sender as! Item
+//
+//        if segue.identifier == viewImageSegueIdentifier {
+//            if let vc = segue.destination as? ImageViewerViewController {
+//                vc.imageName = item.imageName
+//            }
+//        }
+//    }
+    
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib = UINib(nibName: "ItemCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+    }
+    
+    private func setupCollectionViewItemSize() {
+        let customLayout = CustomLayout()
+        customLayout.delegate = self
+        collectionView.collectionViewLayout = customLayout
+    }
+    
+   
+    
+    @objc func didDeleteButtonClicked(_ sender: UIBarButtonItem) {
+        var deleteNeededIndexPaths: [IndexPath] = []
+        for (key, value) in dictionarySelectedIndecPath {
+            if value {
+                deleteNeededIndexPaths.append(key)
+            }
         }
         
+        for i in deleteNeededIndexPaths.sorted(by: { $0.item > $1.item }) {
+            items.remove(at: i.item)
+        }
+        
+        collectionView.deleteItems(at: deleteNeededIndexPaths)
+        dictionarySelectedIndecPath.removeAll()
     }
-    @objc func startTimer(theTimer:Timer)  {
-        UIView.animate(withDuration: 1.0,delay: 0,options: .curveEaseOut , animations: {
-            self.collectionView1.scrollToItem(at: IndexPath (row: theTimer.userInfo! as! Int,section: 0),at:  .centeredHorizontally, animated: false)
-        },completion: nil)
+    
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! ItemCollectionViewCell
+        
+        cell.imageView.image = UIImage(named: items[indexPath.item].imageName)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+            collectionView.deselectItem(at: indexPath, animated: true)
+            let item = items[indexPath.item]
+            performSegue(withIdentifier: viewImageSegueIdentifier, sender: item)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+            dictionarySelectedIndecPath[indexPath] = false
+        
+    }
+    
+}
+
+extension HomeViewController: CustomLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, sizeOfPhotoAtIndexPath indexPath: IndexPath) -> CGSize {
+        return UIImage(named: items[indexPath.item].imageName)!.size
+    }
+}
+
     
     //***** Collection-View
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if (collectionView == collectionView1) {
-            let cell: CustomCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomCollectionViewCell
-            
-            cell.myImage.image = UIImage(named: dataArray[indexPath.row])
-            
-            var  rowIndex = indexPath.row
-            let numberOfrecords: Int = self.dataArray.count - 1
-            if(rowIndex < numberOfrecords){
-                rowIndex += 1
 
-            }else{
-                rowIndex = 0
-            }
-            scrollingTimer = Timer.scheduledTimer(timeInterval: 20.0, target: self, selector: #selector (HomeViewController.startTimer(theTimer:)),userInfo: rowIndex, repeats: false)
-            return cell
-            
-        } else if (collectionView == collectionView2) {
-            
-            let cell: CustomCollectionViewCell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as! CustomCollectionViewCell2
-            
-            cell.myImage2.image = UIImage(named: dataArray2[indexPath.row])
-            
-            
-            return cell
-            
-        } else if (collectionView == collectionView3) {
-            
-            let cell: CustomCollectionViewCell3 = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell3", for: indexPath) as! CustomCollectionViewCell3
-            
-            cell.myImage3.image = UIImage(named: dataArray3[indexPath.row])
-            return cell
-            
-        }
-        else{
-            
-            return UICollectionViewCell()
-        }
-    }
-}
