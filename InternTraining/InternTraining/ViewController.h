@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMDB.h"
+#import "Login.h"
 
 @interface ViewController : UIViewController
 
-
+-(void)initUserData;
+-(void)printStringWith:(FMResultSet *)result;
 @end
 
