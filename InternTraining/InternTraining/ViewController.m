@@ -20,6 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Do any additional setup after loading the view, typically from a nib.
+
+    //commit lan 1
+    //commit 2
+    //commit 3
+// commit 4
+//commit 5
+
+}
+
 }
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
