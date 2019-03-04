@@ -21,7 +21,11 @@
     //commit lan 1
     //commit 2
     //commit 3
+<<<<<<< HEAD
 // commit 4
+=======
+//commit 5
+>>>>>>> liemnht/task_3
 }
 
 
