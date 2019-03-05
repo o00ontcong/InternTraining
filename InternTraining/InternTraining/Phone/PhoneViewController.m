@@ -9,6 +9,7 @@
 #import "PhoneViewController.h"
 
 @interface PhoneViewController ()
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -23,11 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //MARK: Open Connection;
-    [self openConnection];
-    
-//MARK: Create Table
-    [self createTable];
+
     
     
 }//End vỉewDidLoad
@@ -37,21 +34,71 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)viewWillAppear:(BOOL)animated{
+   
+    //MARK: Open Connection;
+    [self openConnection];
+    
+    //MARK: Create Table
+    [self createTable];
+    
+    //MARK: Get tabledata
+    if(!phones) phones = [[NSMutableArray alloc] init];
+    [self getAllFromPhone_master];
+    
+    //Query
     [self queryStatus1];
     [self queryPrice20Milion];
     [self queryDecription2Sim_Type2_Status1];
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//MARK: CollectionView DataSource
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *cellIdentifier = @"phoneCell";
+    Phone *currentPhone = [phones objectAtIndex:indexPath.row];
+    PhoneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    
+    cell.phoneImageView.image = [UIImage imageNamed:@"xiaomi_mi_9"];
+    cell.phoneNameText.text = currentPhone.name;
+   
+    cell.type.text = [NSString stringWithFormat:@"Type: %ld",currentPhone.type];
+    cell.statusText.text = currentPhone.status == 1?@"Available":@"N/A";
+    cell.decriptionText.text =  currentPhone.description;
+    
+    NSNumberFormatter *formatterCurrency;
+    formatterCurrency = [[NSNumberFormatter alloc] init];
+    formatterCurrency.numberStyle = NSNumberFormatterCurrencyStyle;
+    [formatterCurrency setMaximumFractionDigits:0];
+    [formatterCurrency setCurrencySymbol:@""];
+     cell.priceText.text = [NSString stringWithFormat:@"Price: %@ VNĐ",[formatterCurrency stringFromNumber:@(currentPhone.price)]];
+    return cell;
 }
-*/
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return phones.count;
+}
+
+
+
+
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    
+    
+}
+
 - (IBAction)didPressCloseButton:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
@@ -87,14 +134,14 @@
 -(void)queryPrice20Milion{
     NSString *query20m = @"select id,name,type,description,status,price from phone_master where price >= 20000000";
     FMResultSet *twentyMilionResultSet = [phonedb executeQuery:query20m];
-
+    
     if ([twentyMilionResultSet next]) {
         do {
             NSLog(@" 20.000.000 ResultSet  %@",[twentyMilionResultSet resultDictionary]);
         } while ([twentyMilionResultSet next]);
     }
     else {
-        printf("No Price > 20.000.000 found");
+        printf("No Price > 20.000.000 found\n");
     }
 };
 -(void)queryStatus1{
@@ -106,7 +153,7 @@
         } while ([status1ResultSet next]);
     }
     else {
-        printf("No Status 1 found");
+        printf("No Status 1 found\n");
     }
 };
 -(void)queryDecription2Sim_Type2_Status1{
@@ -118,19 +165,33 @@
         } while ([decription2SimResultSet next]);
     }
     else {
-        printf("No 2 Sim found");
+        printf("No 2 Sim found\n");
     }
 };
 
 -(Phone *)getResultSetValueWith:(FMResultSet *)result{
-        NSInteger phoneId = [result intForColumn:@"id"];
-        NSString *name = [result stringForColumn:@"name"];
-        NSInteger type = [result intForColumn:@"type"];
-        NSString *description = [result stringForColumn:@"description"];
-        Boolean status = [result boolForColumn:@"status"];
-        NSInteger price = [result intForColumn:@"price"];    
+    NSInteger phoneId = [result intForColumn:@"id"];
+    NSString *name = [result stringForColumn:@"name"];
+    NSInteger type = [result intForColumn:@"type"];
+    NSString *description = [result stringForColumn:@"description"];
+    Boolean status = [result boolForColumn:@"status"];
+    NSInteger price = [result intForColumn:@"price"];
     
     return [[Phone alloc] initWithId:&phoneId name:name type:&type description:description status:&status price:&price];
+};
+
+-(void)getAllFromPhone_master{
+     if(!phones) phones = [[NSMutableArray alloc] init];
+    NSString *query =@"select * from phone_master ";
+    FMResultSet *resultSet = [phonedb executeQuery:query];
+    if ([resultSet next]) {
+        do {
+            [phones addObject: [self getResultSetValueWith:resultSet]];
+        } while ([resultSet next]);
+    }
+    else {
+        printf("No Data found\n");
+    }
 };
 
 @end

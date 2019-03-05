@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "FMDB.h"
 #import "Phone.h"
+#import "PhoneCollectionViewCell.h"
 
-@interface PhoneViewController : UIViewController
+@interface PhoneViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 - (IBAction)didPressCloseButton:(id)sender;
 - (IBAction)didPressAddButton:(id)sender;
 

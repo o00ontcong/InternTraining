@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,25 +85,96 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-6a-QTq">
                                 <rect key="frame" x="0.0" y="102" width="375" height="676"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mo9-Nc-EzP">
-                                    <size key="itemSize" width="375" height="105"/>
+                                    <size key="itemSize" width="375" height="183"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="phoneCell" id="Uiz-l0-w6T" customClass="PhoneCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="183"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPhone XR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L34-L9-N4o">
+                                                    <rect key="frame" x="140" y="20" width="95" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="textColor" red="0.54500001669999998" green="0.2310000062" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaomi_mi_9" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-nR-2zM">
+                                                    <rect key="frame" x="20" y="20" width="112" height="143"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="7f0-eJ-Udc"/>
+                                                        <constraint firstAttribute="height" constant="143" id="Q1y-oI-JPF"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type: 1" textAlignment="natural" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogs-42-iew">
+                                                    <rect key="frame" x="309" y="20" width="46" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="XiZ-gJ-b2I">
+                                                    <rect key="frame" x="140" y="50" width="215" height="83"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="215" id="7g5-pS-afE"/>
+                                                        <constraint firstAttribute="height" constant="83" id="mFY-So-FEV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX7-LC-9lo">
+                                                    <rect key="frame" x="311" y="147" width="53.666666666666686" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá: 33.990.000 VNĐ" textAlignment="natural" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7x-DJ-MMR">
+                                                    <rect key="frame" x="145" y="146" width="138" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vX7-LC-9lo" firstAttribute="trailing" secondItem="XiZ-gJ-b2I" secondAttribute="trailing" constant="9.6666666666666856" id="2tP-ym-Ve4"/>
+                                            <constraint firstItem="XiZ-gJ-b2I" firstAttribute="trailing" secondItem="Ogs-42-iew" secondAttribute="trailing" id="CB1-tZ-9GE"/>
+                                            <constraint firstItem="XiZ-gJ-b2I" firstAttribute="trailing" secondItem="o7x-DJ-MMR" secondAttribute="trailing" constant="72" id="CvP-Ro-HAj"/>
+                                            <constraint firstItem="aDQ-nR-2zM" firstAttribute="centerY" secondItem="Uiz-l0-w6T" secondAttribute="centerY" id="FHA-bT-7P2"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="XiZ-gJ-b2I" secondAttribute="trailing" constant="12" id="OeN-c5-9V0"/>
+                                            <constraint firstItem="aDQ-nR-2zM" firstAttribute="leading" secondItem="Uiz-l0-w6T" secondAttribute="leadingMargin" constant="12" id="PPs-SL-w9A"/>
+                                            <constraint firstItem="L34-L9-N4o" firstAttribute="centerX" secondItem="Uiz-l0-w6T" secondAttribute="centerX" id="TAc-Tk-9z7"/>
+                                            <constraint firstItem="o7x-DJ-MMR" firstAttribute="top" secondItem="XiZ-gJ-b2I" secondAttribute="bottom" constant="13" id="vQe-v0-CbP"/>
+                                            <constraint firstItem="L34-L9-N4o" firstAttribute="top" secondItem="aDQ-nR-2zM" secondAttribute="top" id="x0W-jM-iXi"/>
+                                            <constraint firstItem="Ogs-42-iew" firstAttribute="top" secondItem="aDQ-nR-2zM" secondAttribute="top" id="xnK-Vb-1Vq"/>
+                                            <constraint firstItem="XiZ-gJ-b2I" firstAttribute="centerY" secondItem="aDQ-nR-2zM" secondAttribute="centerY" id="yP2-qp-qdL"/>
+                                            <constraint firstItem="o7x-DJ-MMR" firstAttribute="top" secondItem="vX7-LC-9lo" secondAttribute="bottom" constant="-17" id="zWT-1u-hJA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="decriptionText" destination="XiZ-gJ-b2I" id="ggR-qw-4PM"/>
+                                            <outlet property="phoneImageView" destination="aDQ-nR-2zM" id="Fhj-49-8K7"/>
+                                            <outlet property="phoneNameText" destination="L34-L9-N4o" id="vdK-oh-Hu0"/>
+                                            <outlet property="priceText" destination="o7x-DJ-MMR" id="TRH-st-E5a"/>
+                                            <outlet property="statusText" destination="vX7-LC-9lo" id="GaX-tx-ZsR"/>
+                                            <outlet property="type" destination="Ogs-42-iew" id="lFR-wB-Pkf"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="TaU-mg-ObJ" id="Ksh-9U-sQI"/>
+                                    <outlet property="delegate" destination="TaU-mg-ObJ" id="UaD-ih-ieF"/>
+                                </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b2C-uF-HtL" firstAttribute="top" secondItem="4TD-io-c13" secondAttribute="top" id="2uG-Tc-p0p"/>
                             <constraint firstItem="nPE-6a-QTq" firstAttribute="bottom" secondItem="4TD-io-c13" secondAttribute="bottom" id="5W9-2Z-xup"/>
@@ -115,10 +187,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4TD-io-c13"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="nPE-6a-QTq" id="gpY-8h-kjj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivP-qa-lmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94.964028776978424" y="-111.6906474820144"/>
+            <point key="canvasLocation" x="93.599999999999994" y="-112.3152709359606"/>
         </scene>
         <!--Add Phone View Controller-->
         <scene sceneID="dML-N6-6F0">
@@ -323,5 +398,6 @@
     <resources>
         <image name="Rectangle 14 Copy" width="318" height="58"/>
         <image name="close-btn" width="24" height="24"/>
+        <image name="xiaomi_mi_9" width="498" height="498"/>
     </resources>
 </document>
