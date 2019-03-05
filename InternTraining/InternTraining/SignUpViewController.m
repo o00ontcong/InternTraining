@@ -86,16 +86,18 @@ typedef enum : NSUInteger {
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)didPressSignUpButton:(id)sender {
-    NSString *fullName = _fullNameTextField.text;
-    NSString *email = _emailTextField.text;
-    NSString *password = _passwordTextField.text;
-    NSString *confirmPassword = _confirmPasswordTextField.text;
-    
-    if(password == confirmPassword && email != nil && fullName !=nil){
-        
-        
-    }
-    
-    
+//    NSString *fullName = _fullNameTextField.text;
+//    NSString *email = _emailTextField.text;
+//    NSString *password = _passwordTextField.text;
+//    NSString *confirmPassword = _confirmPasswordTextField.text;
+//
+//    if(password == confirmPassword && email != nil && fullName !=nil){
+//
+//
+//    }
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Phone" bundle:nil];
+    UIViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"PhoneViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
 }
 @end
