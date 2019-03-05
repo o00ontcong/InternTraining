@@ -9,6 +9,7 @@
 #import "Phone.h"
 
 @implementation Phone
+@synthesize description;
 
 -(instancetype)initWithId: (NSInteger *)Id
                      name:(NSString *)name
