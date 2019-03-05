@@ -64,7 +64,7 @@ FMDatabase *database;
     
     [self openConnection];
     //Check Empty
-    if ([phone isEqualToString: emptyString] || type == 0 || [description isEqualToString: emptyString] || price > 0) {
+    if ([phone isEqualToString: emptyString] || type == 0 || [description isEqualToString: emptyString] || price <= 0) {
         NSLog(@"Error: Some Input Field is empty or smaller than 0");
     }
     else{

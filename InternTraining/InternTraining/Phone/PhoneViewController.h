@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FMDB.h"
+#import "Phone.h"
 
 @interface PhoneViewController : UIViewController
 - (IBAction)didPressCloseButton:(id)sender;
 - (IBAction)didPressAddButton:(id)sender;
+
 
 -(void)openConnection;
 -(void)createTable;
