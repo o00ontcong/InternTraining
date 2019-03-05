@@ -49,6 +49,14 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+- (IBAction)didPressAddButton:(id)sender {
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Phone" bundle:nil];
+    UIViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"AddPhoneViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
+}
+
 -(void)openConnection{
     path = [NSTemporaryDirectory() stringByAppendingPathComponent:databaseName];
     db = [FMDatabase databaseWithPath:path];

@@ -11,6 +11,7 @@
 
 @interface PhoneViewController : UIViewController
 - (IBAction)didPressCloseButton:(id)sender;
+- (IBAction)didPressAddButton:(id)sender;
 
 -(void)openConnection;
 -(void)createTable;
