@@ -21,6 +21,7 @@
 		9373081421F16DB0001133D2 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373081321F16DB0001133D2 /* SignUpViewController.m */; };
 		93944EF4222E253700F7F835 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EF1222E253700F7F835 /* PhoneViewController.m */; };
 		93944EF5222E253700F7F835 /* Phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93944EF2222E253700F7F835 /* Phone.storyboard */; };
+		93944EF9222E295200F7F835 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EF8222E295200F7F835 /* Phone.m */; };
 		93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BDDF0421F5605800F8B4DB /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		93944EF1222E253700F7F835 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 		93944EF2222E253700F7F835 /* Phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Phone.storyboard; sourceTree = "<group>"; };
 		93944EF3222E253700F7F835 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
+		93944EF7222E295200F7F835 /* Phone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
+		93944EF8222E295200F7F835 /* Phone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
 		93BDDF0321F5605800F8B4DB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		93BDDF0421F5605800F8B4DB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +133,8 @@
 				93944EF2222E253700F7F835 /* Phone.storyboard */,
 				93944EF3222E253700F7F835 /* PhoneViewController.h */,
 				93944EF1222E253700F7F835 /* PhoneViewController.m */,
+				93944EF7222E295200F7F835 /* Phone.h */,
+				93944EF8222E295200F7F835 /* Phone.m */,
 			);
 			path = Phone;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93944EF9222E295200F7F835 /* Phone.m in Sources */,
 				488B2A8821EED5B900C2167B /* ViewController.m in Sources */,
 				9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */,
 				488B2A9321EED5BA00C2167B /* main.m in Sources */,
