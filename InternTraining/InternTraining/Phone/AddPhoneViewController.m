@@ -65,7 +65,7 @@ FMDatabase *database;
     [self openConnection];
     //Check Empty
     if ([phone isEqualToString: emptyString] || type == 0 || [description isEqualToString: emptyString] || price > 0) {
-        NSLog(@"Error: One of Input Field is empty or smaller than 0");
+        NSLog(@"Error: Some Input Field is empty or smaller than 0");
     }
     else{
         //Insert
@@ -77,18 +77,12 @@ FMDatabase *database;
         else{
             printf("Insert Ok!\n");
         }
-        //Query all Record
-        FMResultSet *resultSet = [database executeQuery:@"select * from phone_master"];
-        if ([resultSet next]) {
-            do {
-                NSLog(@"%@",[resultSet resultDictionary]);
-            } while ([resultSet next]);
-        }
-        else {
-            printf("No data found");
-        }
+        [self queryAllRecord];
+       
     }
 }
+
+
 -(void)openConnection{
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Phone.db"];
     database = [FMDatabase databaseWithPath:path];
@@ -99,4 +93,19 @@ FMDatabase *database;
     else {
         printf("DB Open OK!\n");
     }
-};@end
+};
+
+-(void)queryAllRecord{
+    //Query all Record
+    FMResultSet *resultSet = [database executeQuery:@"select * from phone_master"];
+    if ([resultSet next]) {
+        do {
+            NSLog(@"%@",[resultSet resultDictionary]);
+        } while ([resultSet next]);
+    }
+    else {
+        printf("No data found");
+    }
+};
+
+@end
