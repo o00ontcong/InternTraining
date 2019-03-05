@@ -28,25 +28,6 @@
 //MARK: Create Table
     [self createTable];
     
-//MARK: Insert 1 Record 
-    
-    NSString *insertString =@"INSERT INTO phone_master (name,type,description,status,price) VALUES ('iPhone Xs Max 512GB',1,'Là chiếc smartphone cao cấp nhất của Apple',1,38990000)";
-        //Quer
-        BOOL success = [db executeStatements:insertString];
-        if (!success) {
-            printf("Insert error = %s\n", [[db lastErrorMessage] UTF8String]);
-        }
-        else{
-            printf("Insert Ok!\n");
-        }
-    FMResultSet *resultSet = [db executeQuery:@"select * from phone_master"];
-    if ([resultSet next]) {
-        NSLog(@"%@",[resultSet resultDictionary]);
-    }
-    else {
-        printf("No data found");
-    }
-    
     
 }//End vỉewDidLoad
 
