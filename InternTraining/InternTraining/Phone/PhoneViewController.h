@@ -15,5 +15,8 @@
 
 -(void)openConnection;
 -(void)createTable;
+-(void)queryPrice20Milion;
+-(void)queryStatus1;
+-(void)queryDecription2Sim_Type2_Status1;
 
 @end

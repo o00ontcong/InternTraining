@@ -16,7 +16,7 @@
 
     NSString *path;
     NSString *databaseName = @"Phone.db";
-    FMDatabase *db;
+    FMDatabase *phonedb;
     NSString *tableQueue= @"CREATE TABLE IF NOT EXISTS phone_master (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,type INTEGER,description TEXT, status BOOLEAN ,price INTEGER)";
 
 - (void)viewDidLoad {
@@ -59,23 +59,31 @@
 
 -(void)openConnection{
     path = [NSTemporaryDirectory() stringByAppendingPathComponent:databaseName];
-    db = [FMDatabase databaseWithPath:path];
-    if (![db open]) {
-        db = nil;
-        printf("DB Open Error %s\n", [[db lastErrorMessage] UTF8String]);
+    phonedb = [FMDatabase databaseWithPath:path];
+    if (![phonedb open]) {
+        phonedb = nil;
+        printf("DB Open Error %s\n", [[phonedb lastErrorMessage] UTF8String]);
     }
     else {
         printf("DB Open OK!\n");
     }
 };
 -(void)createTable{
-    BOOL createTableresult = [db executeUpdate:tableQueue];
+    BOOL createTableresult = [phonedb executeUpdate:tableQueue];
     if (!createTableresult) {
-        printf("Create table error = %s\n", [[db lastErrorMessage] UTF8String]);
+        printf("Create table error = %s\n", [[phonedb lastErrorMessage] UTF8String]);
     }
     else{
         printf("Create table OK!\n");
     }
 }
+-(void)queryPrice20Milion{
+};
+-(void)queryStatus1{
+    
+};
+-(void)queryDecription2Sim_Type2_Status1{
+    
+};
 
 @end

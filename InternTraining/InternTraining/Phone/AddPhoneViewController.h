@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhoneViewController.h"
+#import "FMDB.h"
 
 @interface AddPhoneViewController : UIViewController
+- (IBAction)didPressCloseButton:(id)sender;
+- (IBAction)didPressAddButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *typeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *statusSegmented;
+
+@property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 
 @end
