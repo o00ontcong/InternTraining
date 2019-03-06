@@ -13,6 +13,12 @@
 		488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488B2A8C21EED5BA00C2167B /* Assets.xcassets */; };
 		488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488B2A8E21EED5BA00C2167B /* LaunchScreen.storyboard */; };
 		488B2A9321EED5BA00C2167B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488B2A9221EED5BA00C2167B /* main.m */; };
+		8A22317A222FC9BC0045E76F /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A223179222FC9BC0045E76F /* Shop.storyboard */; };
+		8A22317D222FC9CF0045E76F /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A22317C222FC9CF0045E76F /* ShopViewController.m */; };
+		8A223182222FCA2D0045E76F /* ShopDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A223181222FCA2D0045E76F /* ShopDatabase.m */; };
+		8A223186222FCA5A0045E76F /* AddShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A223185222FCA5A0045E76F /* AddShopViewController.m */; };
+		8A22318A222FCA770045E76F /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A223188222FCA770045E76F /* ShopTableViewCell.m */; };
+		8A22318B222FCA770045E76F /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A223189222FCA770045E76F /* ShopTableViewCell.xib */; };
 		9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695842228D07800F5AC05 /* FMDatabasePool.m */; };
 		935695902228D07900F5AC05 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695852228D07800F5AC05 /* FMDatabaseQueue.m */; };
 		935695912228D07900F5AC05 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695872228D07900F5AC05 /* FMDatabase.m */; };
@@ -33,6 +39,16 @@
 		488B2A8F21EED5BA00C2167B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		488B2A9121EED5BA00C2167B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488B2A9221EED5BA00C2167B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8A223179222FC9BC0045E76F /* Shop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shop.storyboard; sourceTree = "<group>"; };
+		8A22317B222FC9CF0045E76F /* ShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		8A22317C222FC9CF0045E76F /* ShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		8A223181222FCA2D0045E76F /* ShopDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDatabase.m; sourceTree = "<group>"; };
+		8A223183222FCA400045E76F /* ShopDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDatabase.h; sourceTree = "<group>"; };
+		8A223184222FCA5A0045E76F /* AddShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddShopViewController.h; sourceTree = "<group>"; };
+		8A223185222FCA5A0045E76F /* AddShopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddShopViewController.m; sourceTree = "<group>"; };
+		8A223187222FCA770045E76F /* ShopTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		8A223188222FCA770045E76F /* ShopTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		8A223189222FCA770045E76F /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		935695832228D07800F5AC05 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		935695842228D07800F5AC05 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		935695852228D07800F5AC05 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
@@ -81,6 +97,7 @@
 		488B2A8221EED5B800C2167B /* InternTraining */ = {
 			isa = PBXGroup;
 			children = (
+				8A223178222FC96C0045E76F /* Shop */,
 				935695952228D08400F5AC05 /* fmdb */,
 				488B2A8321EED5B900C2167B /* AppDelegate.h */,
 				488B2A8421EED5B900C2167B /* AppDelegate.m */,
@@ -97,6 +114,48 @@
 				93BDDF0421F5605800F8B4DB /* LoginViewController.m */,
 			);
 			path = InternTraining;
+			sourceTree = "<group>";
+		};
+		8A223178222FC96C0045E76F /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				8A22317E222FC9D30045E76F /* ShopDatabase */,
+				8A223180222FC9E30045E76F /* ShopTableViewCell */,
+				8A22317F222FC9DC0045E76F /* AddShop */,
+				8A223179222FC9BC0045E76F /* Shop.storyboard */,
+				8A22317B222FC9CF0045E76F /* ShopViewController.h */,
+				8A22317C222FC9CF0045E76F /* ShopViewController.m */,
+			);
+			name = Shop;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8A22317E222FC9D30045E76F /* ShopDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				8A223183222FCA400045E76F /* ShopDatabase.h */,
+				8A223181222FCA2D0045E76F /* ShopDatabase.m */,
+			);
+			path = ShopDatabase;
+			sourceTree = "<group>";
+		};
+		8A22317F222FC9DC0045E76F /* AddShop */ = {
+			isa = PBXGroup;
+			children = (
+				8A223184222FCA5A0045E76F /* AddShopViewController.h */,
+				8A223185222FCA5A0045E76F /* AddShopViewController.m */,
+			);
+			path = AddShop;
+			sourceTree = "<group>";
+		};
+		8A223180222FC9E30045E76F /* ShopTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8A223187222FCA770045E76F /* ShopTableViewCell.h */,
+				8A223188222FCA770045E76F /* ShopTableViewCell.m */,
+				8A223189222FCA770045E76F /* ShopTableViewCell.xib */,
+			);
+			path = ShopTableViewCell;
 			sourceTree = "<group>";
 		};
 		935695952228D08400F5AC05 /* fmdb */ = {
@@ -175,8 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A22317A222FC9BC0045E76F /* Shop.storyboard in Resources */,
 				488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */,
 				488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */,
+				8A22318B222FCA770045E76F /* ShopTableViewCell.xib in Resources */,
 				488B2A8B21EED5B900C2167B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,13 +249,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A223182222FCA2D0045E76F /* ShopDatabase.m in Sources */,
 				488B2A8821EED5B900C2167B /* ViewController.m in Sources */,
 				9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */,
+				8A22318A222FCA770045E76F /* ShopTableViewCell.m in Sources */,
 				488B2A9321EED5BA00C2167B /* main.m in Sources */,
+				8A22317D222FC9CF0045E76F /* ShopViewController.m in Sources */,
 				935695902228D07900F5AC05 /* FMDatabaseQueue.m in Sources */,
 				935695932228D07900F5AC05 /* FMResultSet.m in Sources */,
 				9373081421F16DB0001133D2 /* SignUpViewController.m in Sources */,
 				935695922228D07900F5AC05 /* FMDatabaseAdditions.m in Sources */,
+				8A223186222FCA5A0045E76F /* AddShopViewController.m in Sources */,
 				488B2A8521EED5B900C2167B /* AppDelegate.m in Sources */,
 				93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */,
 				935695912228D07900F5AC05 /* FMDatabase.m in Sources */,

@@ -70,6 +70,15 @@ typedef enum : NSUInteger {
     }
 }
 
+- (IBAction)goShopView:(id)sender {
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Shop" bundle:nil];
+    UIViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"ShopViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
+
+    
+}
 
 
 @end
