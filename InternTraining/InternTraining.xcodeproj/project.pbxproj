@@ -26,6 +26,7 @@
 		93944EFF222E38AA00F7F835 /* PhoneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EFE222E38AA00F7F835 /* PhoneCollectionViewCell.m */; };
 		9395112C2230BCC000D0659A /* ContactArea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9395112B2230BCC000D0659A /* ContactArea.storyboard */; };
 		9395112F2230BCDC00D0659A /* ContactAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9395112E2230BCDC00D0659A /* ContactAreaViewController.m */; };
+		939511322230F82A00D0659A /* 1051_2880_DMSCoreDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 939511312230DB0C00D0659A /* 1051_2880_DMSCoreDatabase.sqlite */; };
 		93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BDDF0421F5605800F8B4DB /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		9395112B2230BCC000D0659A /* ContactArea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactArea.storyboard; sourceTree = "<group>"; };
 		9395112D2230BCDC00D0659A /* ContactAreaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactAreaViewController.h; sourceTree = "<group>"; };
 		9395112E2230BCDC00D0659A /* ContactAreaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactAreaViewController.m; sourceTree = "<group>"; };
+		939511312230DB0C00D0659A /* 1051_2880_DMSCoreDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1051_2880_DMSCoreDatabase.sqlite; sourceTree = "<group>"; };
 		93BDDF0321F5605800F8B4DB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		93BDDF0421F5605800F8B4DB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				488B2A8E21EED5BA00C2167B /* LaunchScreen.storyboard */,
 				488B2A9121EED5BA00C2167B /* Info.plist */,
 				488B2A9221EED5BA00C2167B /* main.m */,
+				939511312230DB0C00D0659A /* 1051_2880_DMSCoreDatabase.sqlite */,
 				9373081221F16DB0001133D2 /* SignUpViewController.h */,
 				9373081321F16DB0001133D2 /* SignUpViewController.m */,
 				93BDDF0321F5605800F8B4DB /* LoginViewController.h */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939511322230F82A00D0659A /* 1051_2880_DMSCoreDatabase.sqlite in Resources */,
 				488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */,
 				93944EF5222E253700F7F835 /* Phone.storyboard in Resources */,
 				488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */,

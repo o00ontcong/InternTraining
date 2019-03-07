@@ -13,15 +13,35 @@
 @end
 
 @implementation ContactAreaViewController
+//Too lazy to Create Object
+    NSMutableArray *ProvinceArea_ID;
+    NSMutableArray *Province_Name;
+    NSMutableArray *DistrictArea_ID;
+    NSMutableArray *District_Name;
+    NSMutableArray *PrecinctArea_ID;
+    NSMutableArray *Precinct_Name;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if(!ProvinceArea_ID) ProvinceArea_ID = [[NSMutableArray alloc]init];
+    if(!Province_Name) Province_Name = [[NSMutableArray alloc]init];
+    if(!DistrictArea_ID) DistrictArea_ID = [[NSMutableArray alloc]init];
+    if(!District_Name) District_Name = [[NSMutableArray alloc]init];
+    if(!PrecinctArea_ID) PrecinctArea_ID = [[NSMutableArray alloc]init];
+    if(!Precinct_Name) Precinct_Name = [[NSMutableArray alloc]init];
+    
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [self getAreaProvinceCount];
+    [self getAreaProvinceList];
+    NSInteger provinceID = [[ProvinceArea_ID objectAtIndex:0]integerValue];
+    [self getDistrictListWithProvinceAREA_ID:provinceID];
+    NSInteger districtId = [[DistrictArea_ID objectAtIndex:0]integerValue];
+    [self getPrecinctListWithDistrictAREA_ID:districtId];
 }
 
 /*
@@ -33,5 +53,105 @@
     // Pass the selected object to the new view controller.
 }
 */
+//Reference: https://stackoverflow.com/questions/17080018/use-and-access-existing-sqlite-database-on-ios
+    - (void)getAreaProvinceCount {
+        // Getting the database path.
+        NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docsPath = [paths objectAtIndex:0];
+        NSString *dbPath = [docsPath stringByAppendingPathComponent:@"1051_2880_DMSCoreDatabase.sqlite"];
+        FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
+        [database open];
+
+        NSString *sqlSelectQuery = @"SELECT Count(PROVINCE) as count FROM AREA where PARENT_AREA_ID = 2";
+        
+        // Query result
+        FMResultSet *result = [database executeQuery:sqlSelectQuery];
+        if (![result next]) {
+            NSLog(@"Error: No data Found");
+        }
+        else{
+                //Log query result
+                NSString *count = [NSString stringWithFormat:@"%d",[result intForColumn:@"count"]];
+                NSLog(@"count = %@",count);
+            }
+        [database close];
+    }
+-(void)getAreaProvinceList{
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [paths objectAtIndex:0];
+    NSString *dbPath = [docsPath stringByAppendingPathComponent:@"1051_2880_DMSCoreDatabase.sqlite"];
+    FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
+    [database open];
+    
+    //Query result
+    NSString *sqlSelectQuery = @"SELECT PROVINCE_NAME,AREA_ID FROM AREA where PARENT_AREA_ID = 2 ";
+     FMResultSet *result = [database executeQuery:sqlSelectQuery];
+    if (![result next]) {
+        NSLog(@"Error: No data Found");
+    }
+    else{
+        NSInteger index = 0;
+        do{
+            [ProvinceArea_ID addObject: @([result intForColumn:@"AREA_ID"])];
+            [Province_Name addObject:[result stringForColumn:@"PROVINCE_NAME"]];
+            //Log query result
+            NSLog(@"Area_ID = %@, PROVINCE_NAME = %@",[ProvinceArea_ID objectAtIndex:index],[Province_Name objectAtIndex:index]);
+            index +=1;
+        }while ([result next]);
+    }
+    [database close];
+}
+-(void)getDistrictListWithProvinceAREA_ID:(NSInteger)provinceAREA_ID {
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [paths objectAtIndex:0];
+    NSString *dbPath = [docsPath stringByAppendingPathComponent:@"1051_2880_DMSCoreDatabase.sqlite"];
+    FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
+    [database open];
+    
+    //Query result
+    NSString *sqlSelectQuery = [NSString stringWithFormat:@"SELECT AREA_ID,DISTRICT_NAME FROM AREA where PARENT_AREA_ID = %ld",provinceAREA_ID];
+    
+    FMResultSet *result = [database executeQuery:sqlSelectQuery];
+    if (![result next]) {
+        NSLog(@"Error: No data Found");
+    }
+    else{
+        NSInteger index = 0;
+        do{
+            [DistrictArea_ID addObject: @([result intForColumn:@"AREA_ID"])];
+            [District_Name addObject:[result stringForColumn:@"DISTRICT_NAME"]];
+            //Log query result
+            NSLog(@"Area_ID = %@, DISTRICT_NAME = %@",[DistrictArea_ID objectAtIndex:index],[District_Name objectAtIndex:index]);
+            index +=1;
+        }while ([result next]);
+    }
+    [database close];
+}
+-(void)getPrecinctListWithDistrictAREA_ID:(NSInteger)DistrictAREA_ID {
+    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsPath = [paths objectAtIndex:0];
+    NSString *dbPath = [docsPath stringByAppendingPathComponent:@"1051_2880_DMSCoreDatabase.sqlite"];
+    FMDatabase *database = [FMDatabase databaseWithPath:dbPath];
+    [database open];
+    
+    //Query result
+    NSString *sqlSelectQuery = [NSString stringWithFormat:@"SELECT AREA_ID,PRECINCT_NAME FROM AREA where PARENT_AREA_ID = %ld",DistrictAREA_ID];
+    
+    FMResultSet *result = [database executeQuery:sqlSelectQuery];
+    if (![result next]) {
+        NSLog(@"Error: No data Found");
+    }
+    else{
+        NSInteger index = 0;
+        do{
+            [PrecinctArea_ID addObject: @([result intForColumn:@"AREA_ID"])];
+            [Precinct_Name addObject:[result stringForColumn:@"PRECINCT_NAME"]];
+            //Log query result
+            NSLog(@"Area_ID = %@, PRECINCT_NAME = %@",[PrecinctArea_ID objectAtIndex:index],[Precinct_Name objectAtIndex:index]);
+            index +=1;
+        }while ([result next]);
+    }
+    [database close];
+}
 
 @end

@@ -17,12 +17,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [self createCopyOfDatabaseIfNeeded];
     
     return YES;
 }
 
-
+//Reference: https://stackoverflow.com/questions/17080018/use-and-access-existing-sqlite-database-on-ios
+- (void)createCopyOfDatabaseIfNeeded {
+    // First, test for existence.
+    BOOL success;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // Database filename can have extension db/sqlite.
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *appDBPath = [documentsDirectory stringByAppendingPathComponent:@"1051_2880_DMSCoreDatabase.sqlite"];
+    
+    success = [fileManager fileExistsAtPath:appDBPath];
+    if (success) {
+        return;
+    }
+    // The writable database does not exist, so copy the default to the appropriate location.
+    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"1051_2880_DMSCoreDatabase.sqlite"];
+    success = [fileManager copyItemAtPath:defaultDBPath toPath:appDBPath error:&error];
+    NSAssert(success, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

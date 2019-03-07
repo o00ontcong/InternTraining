@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXz-co-HFX" userLabel="Add">
-                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="50"/>
+                                        <rect key="frame" x="188" y="0.0" width="187" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-dU-E7R">
-                                                <rect key="frame" x="46.666666666666693" y="8.6666666666666643" width="93.666666666666686" height="33"/>
+                                                <rect key="frame" x="47" y="9" width="94" height="33"/>
                                                 <color key="backgroundColor" red="0.33577473959999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="Add">
@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h56-EK-vOT">
-                                                <rect key="frame" x="25.333333333333329" y="13" width="24" height="24"/>
+                                                <rect key="frame" x="25" y="13" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="h56-EK-vOT" secondAttribute="height" multiplier="1:1" id="P2t-xT-9tw"/>
                                                 </constraints>
@@ -68,6 +68,20 @@
                                             <constraint firstAttribute="bottom" secondItem="h56-EK-vOT" secondAttribute="bottom" constant="13" id="peN-tO-gRQ"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="9y7-MT-GYx">
+                                        <rect key="frame" x="76" y="10" width="107" height="30"/>
+                                        <color key="backgroundColor" red="0.54500001669999998" green="0.2310000062" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JxS-uX-Wo7"/>
+                                            <constraint firstAttribute="width" constant="107" id="KM4-J3-HyP"/>
+                                        </constraints>
+                                        <state key="normal" title="ContactArea">
+                                            <color key="titleColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressContactAreaButton:" destination="TaU-mg-ObJ" eventType="touchUpInside" id="3O0-tW-SkY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -75,7 +89,9 @@
                                     <constraint firstItem="TXz-co-HFX" firstAttribute="height" secondItem="b2C-uF-HtL" secondAttribute="height" id="Bb2-3m-WwF"/>
                                     <constraint firstAttribute="height" constant="50" id="N6R-3Y-kX3"/>
                                     <constraint firstAttribute="bottom" secondItem="9r5-r3-Liw" secondAttribute="bottom" id="SeJ-7d-o7t"/>
+                                    <constraint firstItem="9y7-MT-GYx" firstAttribute="centerY" secondItem="9r5-r3-Liw" secondAttribute="centerY" id="W7W-xb-3hY"/>
                                     <constraint firstItem="9r5-r3-Liw" firstAttribute="width" secondItem="b2C-uF-HtL" secondAttribute="width" multiplier="1:5" id="WAq-Sf-ZO7"/>
+                                    <constraint firstItem="9y7-MT-GYx" firstAttribute="leading" secondItem="9r5-r3-Liw" secondAttribute="trailing" constant="1" id="aMm-m8-XcR"/>
                                     <constraint firstAttribute="trailing" secondItem="TXz-co-HFX" secondAttribute="trailing" id="dui-Ld-T05"/>
                                     <constraint firstItem="9r5-r3-Liw" firstAttribute="leading" secondItem="b2C-uF-HtL" secondAttribute="leading" id="g9D-aF-6gl"/>
                                     <constraint firstItem="9r5-r3-Liw" firstAttribute="top" secondItem="b2C-uF-HtL" secondAttribute="top" id="qxW-8g-2vF"/>
@@ -137,7 +153,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX7-LC-9lo">
-                                                    <rect key="frame" x="311" y="147" width="53.666666666666686" height="16"/>
+                                                    <rect key="frame" x="311" y="147" width="54" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

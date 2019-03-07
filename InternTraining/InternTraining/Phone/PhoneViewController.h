@@ -14,6 +14,8 @@
 @interface PhoneViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 - (IBAction)didPressCloseButton:(id)sender;
 - (IBAction)didPressAddButton:(id)sender;
+- (IBAction)didPressContactAreaButton:(UIButton *)sender;
+
 
 
 -(void)openConnection;
