@@ -17,6 +17,8 @@
 
 -(void)openConnection;
 -(void)createTable;
-
+-(void)queryPriceOver10m;
+-(void)queryRamOver2gb_CPUCoreI5;
+-(void)queryHDH_HDDOver500gb_PriceOver10m;
 
 @end

@@ -19,15 +19,17 @@
 @property (nonatomic,strong) NSString *name;
 @property NSInteger price;
 @property (nonatomic, strong) NSString *cpu;
-@property (nonatomic, strong) NSString *hdh;
-@property (nonatomic, strong) NSString *hdd;
+@property NSInteger ram;
+@property Boolean hdh;
+@property NSInteger hdd;
 
 
 -(instancetype)initWithId: (NSInteger *)Id
                      name:(NSString *)name
                      price:(NSInteger *)price
                   cpu:(NSString *)cpu
-                    hdh:(NSString *)hdh
-                      hdd:(NSString *)hdd;
+                    ram:(NSInteger *)ram
+                    hdh:(Boolean *)hdh
+                      hdd:(NSInteger *)hdd;
 
 @end

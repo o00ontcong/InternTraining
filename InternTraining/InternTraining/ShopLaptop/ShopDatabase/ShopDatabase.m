@@ -15,14 +15,16 @@
                      name:(NSString *)name
                     price:(NSInteger *)price
                       cpu:(NSString *)cpu
-                      hdh:(NSString *)hdh
-                      hdd:(NSString *)hdd{
+                    ram:(NSInteger *)ram
+                      hdh:(Boolean *)hdh
+                      hdd:(NSInteger *)hdd{
     self.Id = *(Id);
     self.name = name;
     self.price = *(price);
     self.cpu = cpu;
-    self.hdh = hdh;
-    self.hdd = hdd;
+    self.ram = *(ram);
+    self.hdh = *(hdh);
+    self.hdd = *(hdd);
     return self;
 
 }
