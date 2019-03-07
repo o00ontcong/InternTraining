@@ -24,6 +24,8 @@
 		93944EF9222E295200F7F835 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EF8222E295200F7F835 /* Phone.m */; };
 		93944EFC222E2DBD00F7F835 /* AddPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EFB222E2DBD00F7F835 /* AddPhoneViewController.m */; };
 		93944EFF222E38AA00F7F835 /* PhoneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EFE222E38AA00F7F835 /* PhoneCollectionViewCell.m */; };
+		9395112C2230BCC000D0659A /* ContactArea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9395112B2230BCC000D0659A /* ContactArea.storyboard */; };
+		9395112F2230BCDC00D0659A /* ContactAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9395112E2230BCDC00D0659A /* ContactAreaViewController.m */; };
 		93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BDDF0421F5605800F8B4DB /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,9 @@
 		93944EFB222E2DBD00F7F835 /* AddPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPhoneViewController.m; sourceTree = "<group>"; };
 		93944EFD222E38AA00F7F835 /* PhoneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneCollectionViewCell.h; sourceTree = "<group>"; };
 		93944EFE222E38AA00F7F835 /* PhoneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneCollectionViewCell.m; sourceTree = "<group>"; };
+		9395112B2230BCC000D0659A /* ContactArea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactArea.storyboard; sourceTree = "<group>"; };
+		9395112D2230BCDC00D0659A /* ContactAreaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactAreaViewController.h; sourceTree = "<group>"; };
+		9395112E2230BCDC00D0659A /* ContactAreaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactAreaViewController.m; sourceTree = "<group>"; };
 		93BDDF0321F5605800F8B4DB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		93BDDF0421F5605800F8B4DB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +100,7 @@
 		488B2A8221EED5B800C2167B /* InternTraining */ = {
 			isa = PBXGroup;
 			children = (
+				939511302230BCE400D0659A /* ContactArea */,
 				93944EF6222E253B00F7F835 /* Phone */,
 				935695952228D08400F5AC05 /* fmdb */,
 				488B2A8321EED5B900C2167B /* AppDelegate.h */,
@@ -147,6 +153,16 @@
 				93944EFE222E38AA00F7F835 /* PhoneCollectionViewCell.m */,
 			);
 			path = Phone;
+			sourceTree = "<group>";
+		};
+		939511302230BCE400D0659A /* ContactArea */ = {
+			isa = PBXGroup;
+			children = (
+				9395112B2230BCC000D0659A /* ContactArea.storyboard */,
+				9395112D2230BCDC00D0659A /* ContactAreaViewController.h */,
+				9395112E2230BCDC00D0659A /* ContactAreaViewController.m */,
+			);
+			path = ContactArea;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +226,7 @@
 				93944EF5222E253700F7F835 /* Phone.storyboard in Resources */,
 				488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */,
 				488B2A8B21EED5B900C2167B /* Main.storyboard in Resources */,
+				9395112C2230BCC000D0659A /* ContactArea.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93944EFC222E2DBD00F7F835 /* AddPhoneViewController.m in Sources */,
+				9395112F2230BCDC00D0659A /* ContactAreaViewController.m in Sources */,
 				93944EF9222E295200F7F835 /* Phone.m in Sources */,
 				488B2A8821EED5B900C2167B /* ViewController.m in Sources */,
 				9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */,
