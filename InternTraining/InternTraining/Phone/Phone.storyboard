@@ -28,7 +28,7 @@
                                         <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-dU-E7R">
-                                                <rect key="frame" x="47.666666666666679" y="8.6666666666666643" width="93.333333333333314" height="33"/>
+                                                <rect key="frame" x="46.666666666666693" y="8.6666666666666643" width="93.666666666666686" height="33"/>
                                                 <color key="backgroundColor" red="0.33577473959999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                 <state key="normal" title="Add">
@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h56-EK-vOT">
-                                                <rect key="frame" x="25" y="13" width="24" height="24"/>
+                                                <rect key="frame" x="25.333333333333329" y="13" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="h56-EK-vOT" secondAttribute="height" multiplier="1:1" id="P2t-xT-9tw"/>
                                                 </constraints>
@@ -83,8 +83,15 @@
                                     <constraint firstItem="TXz-co-HFX" firstAttribute="top" secondItem="b2C-uF-HtL" secondAttribute="top" id="uJA-ay-djY"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UwM-r9-5W0">
+                                <rect key="frame" x="0.0" y="94" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TaU-mg-ObJ" id="vsh-Ax-ilk"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-6a-QTq">
-                                <rect key="frame" x="0.0" y="102" width="375" height="676"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="628"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mo9-Nc-EzP">
                                     <size key="itemSize" width="375" height="183"/>
@@ -178,10 +185,13 @@
                         <constraints>
                             <constraint firstItem="b2C-uF-HtL" firstAttribute="top" secondItem="4TD-io-c13" secondAttribute="top" id="2uG-Tc-p0p"/>
                             <constraint firstItem="nPE-6a-QTq" firstAttribute="bottom" secondItem="4TD-io-c13" secondAttribute="bottom" id="5W9-2Z-xup"/>
+                            <constraint firstItem="UwM-r9-5W0" firstAttribute="top" secondItem="b2C-uF-HtL" secondAttribute="bottom" id="6yH-hZ-6W7"/>
+                            <constraint firstItem="UwM-r9-5W0" firstAttribute="leading" secondItem="4TD-io-c13" secondAttribute="leading" id="9hg-ch-plV"/>
                             <constraint firstItem="b2C-uF-HtL" firstAttribute="width" secondItem="4TD-io-c13" secondAttribute="width" id="I7v-yM-U8Y"/>
                             <constraint firstItem="nPE-6a-QTq" firstAttribute="leading" secondItem="4TD-io-c13" secondAttribute="leading" id="WQo-R7-Zsx"/>
-                            <constraint firstItem="nPE-6a-QTq" firstAttribute="top" secondItem="b2C-uF-HtL" secondAttribute="bottom" constant="8" id="Xch-3A-mEl"/>
+                            <constraint firstItem="UwM-r9-5W0" firstAttribute="trailing" secondItem="4TD-io-c13" secondAttribute="trailing" id="drn-kM-hqL"/>
                             <constraint firstItem="b2C-uF-HtL" firstAttribute="trailing" secondItem="4TD-io-c13" secondAttribute="trailing" id="fAq-Ao-4uY"/>
+                            <constraint firstItem="nPE-6a-QTq" firstAttribute="top" secondItem="UwM-r9-5W0" secondAttribute="bottom" id="imj-NI-fkQ"/>
                             <constraint firstItem="b2C-uF-HtL" firstAttribute="leading" secondItem="4TD-io-c13" secondAttribute="leading" id="u9d-XP-OTH"/>
                             <constraint firstItem="nPE-6a-QTq" firstAttribute="trailing" secondItem="4TD-io-c13" secondAttribute="trailing" id="wNn-t4-YCh"/>
                         </constraints>
@@ -189,6 +199,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="nPE-6a-QTq" id="gpY-8h-kjj"/>
+                        <outlet property="searchBar" destination="UwM-r9-5W0" id="eMH-pW-SCj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivP-qa-lmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -328,7 +339,7 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYh-X0-wEI">
-                                <rect key="frame" x="29" y="720" width="318" height="58"/>
+                                <rect key="frame" x="28.666666666666657" y="720" width="318" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="JIO-XI-DrQ"/>
                                 </constraints>

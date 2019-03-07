@@ -10,20 +10,23 @@
 
 @interface PhoneViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 @end
 
 @implementation PhoneViewController
 
-    NSString *path;
     NSMutableArray *phones;
+    NSMutableArray *phonesFiltered;
+    NSString *path;
     NSString *databaseName = @"Phone.db";
     FMDatabase *phonedb;
     NSString *tableQueue= @"CREATE TABLE IF NOT EXISTS phone_master (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,type INTEGER,description TEXT, status BOOLEAN ,price INTEGER)";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 
     
     
@@ -42,13 +45,18 @@
     [self createTable];
     
     //MARK: Get tabledata
+    phones = nil;
+    phonesFiltered = nil;
     if(!phones) phones = [[NSMutableArray alloc] init];
+    if(!phonesFiltered) phonesFiltered = [[NSMutableArray alloc] init];
     [self getAllFromPhone_master];
     
+    phonesFiltered = phones;
     //Query
     [self queryStatus1];
     [self queryPrice20Milion];
     [self queryDecription2Sim_Type2_Status1];
+    [self.collectionView reloadData];
     
 }
 
@@ -56,7 +64,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *cellIdentifier = @"phoneCell";
-    Phone *currentPhone = [phones objectAtIndex:indexPath.row];
+    Phone *currentPhone = [phonesFiltered objectAtIndex:indexPath.row];
     PhoneCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     
@@ -79,9 +87,28 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return phones.count;
 }
+//MARK: SearchBar Delegate
+//- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+//  if (searchText.length != 0) {
+//      NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(%K == %@)", @"phone name", @"GOGoPhone"];
+//      if (!phonesFiltered) { phonesFiltered = [[NSMutableArray alloc] init];}
+//      phonesFiltered = [[phones filteredArrayUsingPredicate:predicate]mutableCopy];
+//
+//       NSLog(@"Text: %@",searchText);
+//      NSLog(@"%@",
+//            );
+// }
 
-
-
+//     [self.collectionView reloadData];
+//}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+}
 
 
 /*
@@ -93,14 +120,9 @@
  // Pass the selected object to the new view controller.
  }
  */
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    
-    
-}
 
 - (IBAction)didPressCloseButton:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didPressAddButton:(id)sender {
