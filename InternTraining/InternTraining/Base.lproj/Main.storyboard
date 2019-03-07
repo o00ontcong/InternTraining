@@ -119,6 +119,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="LOGIN" backgroundImage="login-btn-bg"/>
+                                <connections>
+                                    <action selector="showShopLaptop:" destination="r3r-ED-3Om" eventType="touchUpInside" id="z53-Dc-FV4"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fny-CV-FIU">
                                 <rect key="frame" x="107" y="65" width="161" height="188"/>
