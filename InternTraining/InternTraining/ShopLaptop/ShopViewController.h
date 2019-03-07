@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FMDB.h"
-#import "ShopDatabase.h"
 #import "ShopTableViewCell.h"
-@interface ShopViewController : UIViewController
-
-
+#import "Laptop.h"
+@interface ShopViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 
 -(void)openConnection;

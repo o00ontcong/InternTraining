@@ -11,6 +11,14 @@
 
 @interface ShopViewController ()
 
+
+
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchView;
+
+
 @end
 
 @implementation ShopViewController
@@ -20,29 +28,41 @@
 
 NSString *pathLaptop;
 NSMutableArray *laptops;
-NSString *databaseShop = @"StoreLatop.db";
+NSString *databaseShop = @"Laptop.db";
 FMDatabase *laptopdb;
-NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL,price INTEGER, cpu TEXT ,ram INTEGER,hdh BOOLEAN,HDD INTEGER)";
+NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS laptop_list (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,price INTEGER, cpu TEXT,ram INTEGER,hdh BOOLEAN,hdd INTEGER)";
+- (IBAction)exitView:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+- (IBAction)showSearchBar:(id)sender {
+   
+        if (_searchView.hidden) {
+            _searchView.hidden = false;
+        } else {
+            _searchView.hidden = true;
+        }
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+  
     
     
 }//End vỉewDidLoad
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     
     //MARK: Open Connection;
     [self openConnection];
     
     //MARK: Create Table
-    
+    laptops = nil;
     [self createTable];
     //MARK: Get tabledata
     if(!laptops) laptops = [[NSMutableArray alloc] init];
@@ -52,8 +72,40 @@ NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMA
     [self queryPriceOver10m];
     [self queryRamOver2gb_CPUCoreI5];
     [self queryHDH_HDDOver500gb_PriceOver10m];
+    [self.tableView reloadData];
     
+}
+#pragma mark - TableView
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return laptops.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+ 
+    
+    static NSString *simpleTableIdentifier = @"ShopTableViewCell";
+    Laptop *indexShop = [laptops objectAtIndex:indexPath.row];
+    ShopTableViewCell *cell = (ShopTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"ShopTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.imageLaptop.image = [UIImage imageNamed:@"s.jpg"];
+    cell.nameLatop.text = indexShop.name;
+    
+    cell.priceLaptop.text = [NSString stringWithFormat:@"Price: %ld",indexShop.price];
+    cell.cpuLaptop.text =  indexShop.cpu;
+    cell.ramLaptop.text = [NSString stringWithFormat:@"Ram: %ld",indexShop.ram];
+    cell.hdhLaptop.text = indexShop.hdh == 1?@"Windows":@"MacOS";
+    cell.hddLaptop.text =  [NSString stringWithFormat:@"Hdd: %ld",indexShop.hdd];
+    
+    return cell;
 }
 #pragma mark - OpenConnection
 -(void)openConnection{
@@ -77,7 +129,7 @@ NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMA
     }
 }
 -(void)queryPriceOver10m{
-    NSString *query10m = @"select id,name,price,cpu,ram,hdh,hdd from TBStore where price > 10000000";
+    NSString *query10m = @"select id,name,price,cpu,ram,hdh,hdd from laptop_list where price > 10000000";
     FMResultSet *twentyMilionResultSet = [laptopdb executeQuery:query10m];
     
     if ([twentyMilionResultSet next]) {
@@ -90,7 +142,7 @@ NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMA
     }
 };
 -(void)queryRamOver2gb_CPUCoreI5{
-    NSString *queryRC =@"select id,name,price,cpu,ram,hdh,hdd from TBStore WHERE (ram > 2 AND cpu LIKE 'i5')";
+    NSString *queryRC =@"select id,name,price,cpu,ram,hdh,hdd from laptop_list where (ram > 2 AND cpu LIKE 'i5')";
     FMResultSet *queryRCResultSet = [laptopdb executeQuery:queryRC];
     if ([queryRCResultSet next]) {
         do {
@@ -102,7 +154,7 @@ NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMA
     }
 };
 -(void)queryHDH_HDDOver500gb_PriceOver10m{
-    NSString *queryPrice10m = @"select id,name,price,cpu,ram,hdh,hdd from TBStore Where (hdh = 0 AND hdd > 500 AND price > 10000000)";
+    NSString *queryPrice10m = @"select id,name,price,cpu,ram,hdh,hdd from laptop_list where (hdh = 0 AND hdd > 500 AND price > 10000000)";
     FMResultSet *queryPrice10mResultSet = [laptopdb executeQuery:queryPrice10m];
     if ([queryPrice10mResultSet next]) {
         do {
@@ -115,7 +167,7 @@ NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMA
 };
 
 #pragma mark - getResultSetValue
--(ShopDatabase *)getResultSetValueWith:(FMResultSet *)result{
+-(Laptop *)getResultSetValueWith:(FMResultSet *)result{
     NSInteger laptopId = [result intForColumn:@"id"];
     NSString *name = [result stringForColumn:@"name"];
     NSInteger price = [result intForColumn:@"price"];
@@ -123,12 +175,12 @@ NSString *tableQueueShop= @"CREATE TABLE IF NOT EXISTS TBStore (id INTEGER PRIMA
     NSInteger ram = [result intForColumn:@"ram"];
     Boolean hdh = [result boolForColumn:@"hdh"];
     NSInteger hdd = [result intForColumn:@"hdd"];
-    return [[ShopDatabase alloc] initWithId:&laptopId name:name price:&price cpu:cpu ram:&ram hdh:&hdh hdd:&hdd];
+    return [[Laptop alloc] initWithId:&laptopId name:name price:&price cpu:cpu ram:&ram hdh:&hdh hdd:&hdd];
 };
 
 -(void)getAllFromShop{
     if(!laptops) laptops = [[NSMutableArray alloc] init];
-    NSString *query =@"select * from TBStore ";
+    NSString *query =@"select * from laptop_list";
     FMResultSet *resultSet = [laptopdb executeQuery:query];
     if ([resultSet next]) {
         do {

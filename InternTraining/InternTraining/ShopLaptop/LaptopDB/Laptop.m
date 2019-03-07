@@ -1,14 +1,14 @@
 //
-//  ShopDatabase.m
+//  Laptop.m
 //  InternTraining
 //
 //  Created by Pham Anh Tuan on 3/7/19.
 //  Copyright © 2019 Cong Nguyen. All rights reserved.
 //
 #import <Foundation/Foundation.h>
-#import "ShopDatabase.h"
+#import "Laptop.h"
 
-@implementation ShopDatabase
+@implementation Laptop
 @synthesize description;
 //*
 -(instancetype)initWithId: (NSInteger *)Id

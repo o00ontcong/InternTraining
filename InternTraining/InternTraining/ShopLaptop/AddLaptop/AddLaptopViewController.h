@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FMDB.h"
-@interface AddLaptopViewController : UIViewController
+@interface AddLaptopViewController : UIViewController 
 @property (weak, nonatomic) IBOutlet UITextField *nameAddLaptop;
 @property (weak, nonatomic) IBOutlet UITextField *priceAddLaptop;
 @property (weak, nonatomic) IBOutlet UITextField *cpuAddLaptop;

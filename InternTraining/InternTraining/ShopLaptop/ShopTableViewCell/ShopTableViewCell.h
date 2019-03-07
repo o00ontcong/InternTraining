@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ShopTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageLaptop;
+@property (weak, nonatomic) IBOutlet UILabel *nameLatop;
+@property (weak, nonatomic) IBOutlet UILabel *priceLaptop;
+@property (weak, nonatomic) IBOutlet UILabel *cpuLaptop;
+@property (weak, nonatomic) IBOutlet UILabel *ramLaptop;
+@property (weak, nonatomic) IBOutlet UILabel *hdhLaptop;
+@property (weak, nonatomic) IBOutlet UILabel *hddLaptop;
 
 @end

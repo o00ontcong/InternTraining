@@ -37,9 +37,18 @@ FMDatabase *databaseLaptop;
     
     
     
-    
 }
-
+//- (void)clearAll
+//{
+//    for (UIViewController *vc in self.tabBarController.viewControllers) {
+//        for (UIView *view in vc.view.subviews) {
+//            if ([view isKindOfClass:[UITextField class]]) {
+//                UITextField *textField = (UITextField *)view;
+//                textField.text = nil;
+//            }
+//        }
+//    }
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
@@ -68,7 +77,7 @@ FMDatabase *databaseLaptop;
     }
     else{
         //Insert
-        NSString *insertString = [NSString stringWithFormat:@"INSERT INTO TBStore (name,price,cpu,ram,hdh,hdd) VALUES ('%@',%ld,'%@',%ld,%d,%ld)",name,price,cpu,ram,hdh,hdd];
+        NSString *insertString = [NSString stringWithFormat:@"INSERT INTO laptop_list (name,price,cpu,ram,hdh,hdd) VALUES ('%@',%ld,'%@',%ld,%d,%ld)",name,price,cpu,ram,hdh,hdd];
         BOOL success = [databaseLaptop executeStatements:insertString];
         if (!success) {
             printf("Insert error = %s\n", [[databaseLaptop lastErrorMessage] UTF8String]);
@@ -82,8 +91,8 @@ FMDatabase *databaseLaptop;
 }
 #pragma mark - Query
 -(void)openConnection{
-    NSString *pathl = [NSTemporaryDirectory() stringByAppendingPathComponent:@"StoreLaptop.db"];
-    databaseLaptop = [FMDatabase databaseWithPath:pathl];
+    NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"Laptop.db"];
+    databaseLaptop = [FMDatabase databaseWithPath:path];
     if (![databaseLaptop open]) {
         databaseLaptop = nil;
         printf("DB Open Error %s\n", [[databaseLaptop lastErrorMessage] UTF8String]);
@@ -93,9 +102,10 @@ FMDatabase *databaseLaptop;
     }
 };
 
+
 -(void)queryAllRecord{
-    
-    FMResultSet *resultSet = [databaseLaptop executeQuery:@"select * from TBStore"];
+   
+    FMResultSet *resultSet = [databaseLaptop executeQuery:@"select * from laptop_list"];
     if ([resultSet next]) {
         do {
             NSLog(@"%@",[resultSet resultDictionary]);
