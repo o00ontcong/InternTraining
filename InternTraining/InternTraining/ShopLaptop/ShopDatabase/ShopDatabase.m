@@ -10,7 +10,7 @@
 
 @implementation ShopDatabase
 @synthesize description;
-
+//*
 -(instancetype)initWithId: (NSInteger *)Id
                      name:(NSString *)name
                     price:(NSInteger *)price
@@ -24,5 +24,6 @@
     self.hdh = hdh;
     self.hdd = hdd;
     return self;
+
 }
 @end

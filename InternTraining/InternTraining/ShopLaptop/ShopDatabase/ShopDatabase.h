@@ -13,7 +13,7 @@
 #endif /* ShopDatabase_h */
 
 #import <Foundation/Foundation.h>
-
+//*
 @interface ShopDatabase : NSObject
 @property NSInteger Id;
 @property (nonatomic,strong) NSString *name;
