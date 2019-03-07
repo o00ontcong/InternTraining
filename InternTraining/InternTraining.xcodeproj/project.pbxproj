@@ -13,6 +13,7 @@
 		488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488B2A8C21EED5BA00C2167B /* Assets.xcassets */; };
 		488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488B2A8E21EED5BA00C2167B /* LaunchScreen.storyboard */; };
 		488B2A9321EED5BA00C2167B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 488B2A9221EED5BA00C2167B /* main.m */; };
+		9355153022311ACE005C1B71 /* ProvinceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */; };
 		9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695842228D07800F5AC05 /* FMDatabasePool.m */; };
 		935695902228D07900F5AC05 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695852228D07800F5AC05 /* FMDatabaseQueue.m */; };
 		935695912228D07900F5AC05 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695872228D07900F5AC05 /* FMDatabase.m */; };
@@ -41,6 +42,8 @@
 		488B2A8F21EED5BA00C2167B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		488B2A9121EED5BA00C2167B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488B2A9221EED5BA00C2167B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9355152E22311ACE005C1B71 /* ProvinceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceTableViewCell.h; sourceTree = "<group>"; };
+		9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceTableViewCell.m; sourceTree = "<group>"; };
 		935695832228D07800F5AC05 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		935695842228D07800F5AC05 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		935695852228D07800F5AC05 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				9395112B2230BCC000D0659A /* ContactArea.storyboard */,
 				9395112D2230BCDC00D0659A /* ContactAreaViewController.h */,
 				9395112E2230BCDC00D0659A /* ContactAreaViewController.m */,
+				9355152E22311ACE005C1B71 /* ProvinceTableViewCell.h */,
+				9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */,
 			);
 			path = ContactArea;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				9373081421F16DB0001133D2 /* SignUpViewController.m in Sources */,
 				935695922228D07900F5AC05 /* FMDatabaseAdditions.m in Sources */,
 				93944EFF222E38AA00F7F835 /* PhoneCollectionViewCell.m in Sources */,
+				9355153022311ACE005C1B71 /* ProvinceTableViewCell.m in Sources */,
 				488B2A8521EED5B900C2167B /* AppDelegate.m in Sources */,
 				93944EF4222E253700F7F835 /* PhoneViewController.m in Sources */,
 				93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */,

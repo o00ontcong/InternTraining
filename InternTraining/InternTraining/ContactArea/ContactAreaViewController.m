@@ -36,6 +36,7 @@
    
 }
 - (void)viewWillAppear:(BOOL)animated{
+    self.tableView.hidden = YES;
     [self getAreaProvinceCount];
     [self getAreaProvinceList];
     NSInteger provinceID = [[ProvinceArea_ID objectAtIndex:0]integerValue];
@@ -43,6 +44,24 @@
     NSInteger districtId = [[DistrictArea_ID objectAtIndex:0]integerValue];
     [self getPrecinctListWithDistrictAREA_ID:districtId];
 }
+
+//MARK:Table DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return PrecinctArea_ID.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ProvinceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"provincecell"];
+    cell.AreaNameLabel.text = [Province_Name objectAtIndex:indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.tableView.hidden = YES;
+    self.provinceDropdownTextFlied.text = [Province_Name objectAtIndex:indexPath.row];
+    NSInteger precincta_ID = [[PrecinctArea_ID objectAtIndex:indexPath.row]integerValue];
+    NSLog(@"%ld", precincta_ID);
+    [self getDistrictListWithProvinceAREA_ID:precincta_ID];
+}
+
 
 /*
 #pragma mark - Navigation
@@ -53,6 +72,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//MARK: Query Data
 //Reference: https://stackoverflow.com/questions/17080018/use-and-access-existing-sqlite-database-on-ios
     - (void)getAreaProvinceCount {
         // Getting the database path.
@@ -153,5 +174,41 @@
     }
     [database close];
 }
+//MARK: Dropdown Touch action
+- (IBAction)didPressDropdownButton:(id)sender {
+    if (self.tableView.hidden) {
+        self.tableView.hidden = NO;
+    }else{
+         self.tableView.hidden = YES;
+    }
+    
+}
 
+- (IBAction)didTouchInsideProvinceTextField:(id)sender {
+    if (self.tableView.hidden) {
+        self.tableView.hidden = NO;
+    }else{
+        self.tableView.hidden = YES;
+    }
+}
+
+- (IBAction)editingDidBegin:(UITextField *)sender {
+    self.tableView.hidden = NO;
+}
+
+- (IBAction)editingChanged:(UITextField *)sender {
+     self.tableView.hidden = NO;
+}
+
+- (IBAction)touchDownRepeat:(UITextField *)sender {
+     self.tableView.hidden = NO;
+}
+
+- (IBAction)touchUpOutSide:(UITextField *)sender {
+     self.tableView.hidden = YES;
+}
+
+- (IBAction)primaryActionTriggered:(UITextField *)sender {
+     self.tableView.hidden = YES;
+}
 @end
