@@ -47,7 +47,7 @@
 
 //MARK:Table DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return PrecinctArea_ID.count;
+    return ProvinceArea_ID.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     ProvinceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"provincecell"];
@@ -57,7 +57,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.tableView.hidden = YES;
     self.provinceDropdownTextFlied.text = [Province_Name objectAtIndex:indexPath.row];
-    NSInteger precincta_ID = [[PrecinctArea_ID objectAtIndex:indexPath.row]integerValue];
+    NSInteger precincta_ID = [[Province_Name objectAtIndex:indexPath.row]integerValue];
     NSLog(@"%ld", precincta_ID);
     [self getDistrictListWithProvinceAREA_ID:precincta_ID];
 }
@@ -174,6 +174,9 @@
     }
     [database close];
 }
+
+
+
 //MARK: Dropdown Touch action
 - (IBAction)didPressDropdownButton:(id)sender {
     if (self.tableView.hidden) {
