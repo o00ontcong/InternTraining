@@ -209,6 +209,7 @@
         NSLog(@"Error: No data Found");
     }
     else{
+        NSString *resutlLog =@"";
         do{
             NSString *PARENT_AREA_ID = [NSString  stringWithFormat:@"%d",[result intForColumn:@"PARENT_AREA_ID"]];
             NSString *PROVINCE_NAME = [result stringForColumn:@"PROVINCE_NAME"];
@@ -216,9 +217,10 @@
             NSString *AREA_ID = [NSString  stringWithFormat:@"%d",[result intForColumn:@"AREA_ID"]];
             NSString *AREA_CODE = [result stringForColumn:@"AREA_CODE"];
             //Log query result
-            NSLog(@"ParentAreaId = %@, ProvinceName = %@, DistrictName = %@, AreaID = %@, AreaCode = %@"
-                  ,PARENT_AREA_ID,PROVINCE_NAME,DISTRICT_NAME,AREA_ID,AREA_CODE);
+            NSString *nextLog = [NSString stringWithFormat:@"\nParentAreaId= %@, ProvinceName= %@, DistrictName= %@, AreaID =%@, AreaCode =%@",PARENT_AREA_ID,PROVINCE_NAME,DISTRICT_NAME,AREA_ID,AREA_CODE];
+            resutlLog = [resutlLog stringByAppendingString:nextLog];
         }while ([result next]);
+        NSLog(@"\nDistrict With Biggest Area Code Of Province: \n%@", resutlLog);
     }
     [database close];
 }
@@ -233,32 +235,32 @@
     [database open];
     
     //Query result
-    NSString *sqlSelectQuery = [NSString stringWithFormat:@"SELECT PARENT_AREA_ID, AREA_ID, PROVINCE_NAME, "
-                                "DISTRICT_NAME, Max(AREA_CODE) as AREA_CODE "
-                                "from AREA WHERE PROVINCE in "
-                                "(SELECT PROVINCE FROM AREA where PARENT_AREA_ID = 2) "
-                                "and PRECINCT_NAME is NULL "
-                                "and DISTRICT_NAME is not NULL "
-                                "GROUP by PROVINCE_NAME "
-                                "ORDER by PARENT_AREA_ID"];
+    NSString *sqlSelectQuery = [NSString stringWithFormat:@"SELECT PC.PRODUCT_ID, PD.SHORT_NAME, PD.PRODUCT_NAME, PC.PRICE_ID,  PC.PRICE_NOT_VAT, PC.PRICE "
+                                "from PRICE as PC "
+                                "INNER JOIN PRODUCT as PD "
+                                "ON PC.PRODUCT_ID = PD.PRODUCT_ID "
+                                "where PC.SHOP_ID = 2 "
+                                "ORDER by PC.PRODUCT_ID"];
     
     FMResultSet *result = [database executeQuery:sqlSelectQuery];
     if (![result next]) {
         NSLog(@"Error: No data Found");
     }
     else{
-        NSLog(@"ProcductPrice: %@",[result resultDictionary]);
-        
-//        do{
-//            NSString *PARENT_AREA_ID = [NSString  stringWithFormat:@"%d",[result intForColumn:@"PARENT_AREA_ID"]];
-//            NSString *PROVINCE_NAME = [result stringForColumn:@"PROVINCE_NAME"];
-//            NSString *DISTRICT_NAME = [result stringForColumn:@"DISTRICT_NAME"];
-//            NSString *AREA_ID = [NSString  stringWithFormat:@"%d",[result intForColumn:@"AREA_ID"]];
-//            NSString *AREA_CODE = [result stringForColumn:@"AREA_CODE"];
-//            //Log query result
-//            NSLog(@"ParentAreaId = %@, ProvinceName = %@, DistrictName = %@, AreaID = %@, AreaCode = %@"
-//                  ,PARENT_AREA_ID,PROVINCE_NAME,DISTRICT_NAME,AREA_ID,AREA_CODE);
-//        }while ([result next]);
+        NSString *resutlLog =@"";
+        do{
+            NSString *PRODUCT_ID = [NSString  stringWithFormat:@"%d",[result intForColumn:@"PRODUCT_ID"]];
+            NSString *SHORT_NAME = [result stringForColumn:@"SHORT_NAME"];
+            NSString *PRODUCT_NAME = [result stringForColumn:@"PRODUCT_NAME"];
+            NSString *PRICE_ID = [NSString  stringWithFormat:@"%d",[result intForColumn:@"PRICE_ID"]];
+            NSString *PRICE_NOT_VAT = [NSString  stringWithFormat:@"%d",[result intForColumn:@"PRICE_NOT_VAT"]];
+            NSString *PRICE = [NSString  stringWithFormat:@"%d",[result intForColumn:@"PRICE"]];
+           
+            //Log query result
+            NSString *nextLog = [NSString stringWithFormat:@"\nProductId= %@,ShortName= %@  ,ProductName= %@, PriceID= %@, PriceNoVAT= %@, Price= %@",PRODUCT_ID,SHORT_NAME,PRODUCT_NAME,PRICE_ID,PRICE_NOT_VAT,PRICE];
+            resutlLog = [resutlLog stringByAppendingString:nextLog];
+        }while ([result next]);
+        NSLog(@"\nProcduct Price With Shopid = 2 \n %@",resutlLog);
     }
     [database close];
 }
