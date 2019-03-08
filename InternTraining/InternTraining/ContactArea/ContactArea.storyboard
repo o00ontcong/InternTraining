@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contact Area View Controller-->
+        <scene sceneID="sb5-tN-lfB">
+            <objects>
+                <viewController storyboardIdentifier="ContactAreaViewController" id="pro-N4-5Hl" customClass="ContactAreaViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2z-Rx-gDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập số điện thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9U-8t-pnF">
+                                <rect key="frame" x="30" y="113" width="315" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dX-8I-24A" userLabel="Province View">
+                                <rect key="frame" x="30" y="158" width="315" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chọn Tỉnh/Thành phố" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lht-oh-1pT">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="didTouchInsideProvinceTextField:" destination="pro-N4-5Hl" eventType="touchUpInside" id="psl-Q5-xEl"/>
+                                            <action selector="editingChanged:" destination="pro-N4-5Hl" eventType="editingChanged" id="Rmd-yY-xdX"/>
+                                            <action selector="editingDidBegin:" destination="pro-N4-5Hl" eventType="editingDidBegin" id="rd1-p9-Cz9"/>
+                                            <action selector="primaryActionTriggered:" destination="pro-N4-5Hl" eventType="primaryActionTriggered" id="ETg-MP-h0s"/>
+                                            <action selector="touchDownRepeat:" destination="pro-N4-5Hl" eventType="touchDownRepeat" id="gOI-cD-wgH"/>
+                                            <action selector="touchUpOutSide:" destination="pro-N4-5Hl" eventType="touchUpOutside" id="tIQ-se-Pwm"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XN1-sk-4fz">
+                                        <rect key="frame" x="291" y="7" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="FrC-jC-4Nb"/>
+                                            <constraint firstAttribute="width" constant="16" id="cf7-Th-fLP"/>
+                                        </constraints>
+                                        <state key="normal" image="close-btn"/>
+                                        <connections>
+                                            <action selector="didPressDropdownButton:" destination="pro-N4-5Hl" eventType="touchUpInside" id="dRM-ec-890"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XN1-sk-4fz" firstAttribute="centerY" secondItem="4dX-8I-24A" secondAttribute="centerY" id="NXz-so-iMZ"/>
+                                    <constraint firstItem="XN1-sk-4fz" firstAttribute="top" secondItem="4dX-8I-24A" secondAttribute="top" constant="7" id="Riw-Gq-iUE"/>
+                                    <constraint firstAttribute="trailing" secondItem="XN1-sk-4fz" secondAttribute="trailing" constant="8" id="SFw-x9-suH"/>
+                                    <constraint firstAttribute="height" constant="30" id="fhZ-g2-rgT"/>
+                                    <constraint firstItem="lht-oh-1pT" firstAttribute="leading" secondItem="4dX-8I-24A" secondAttribute="leading" id="g7A-Ld-vH6"/>
+                                    <constraint firstItem="lht-oh-1pT" firstAttribute="centerY" secondItem="XN1-sk-4fz" secondAttribute="centerY" id="hvn-4d-t0B"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YTZ-eV-6Xb">
+                                <rect key="frame" x="30" y="188" width="315" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="provincecell" rowHeight="30" id="l8Y-Mr-tz4" customClass="ProvinceTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="315" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l8Y-Mr-tz4" id="qE6-Fu-Iwv">
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="29.666666666666668"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thủ đô Hà Nội" textAlignment="natural" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-JS-G7S">
+                                                    <rect key="frame" x="45.000000000000007" y="4.6666666666666661" width="109.66666666666669" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="haQ-JS-G7S" firstAttribute="leading" secondItem="qE6-Fu-Iwv" secondAttribute="leadingMargin" constant="30" id="V9e-fz-tBn"/>
+                                                <constraint firstItem="haQ-JS-G7S" firstAttribute="centerY" secondItem="qE6-Fu-Iwv" secondAttribute="centerY" id="p2G-u8-Il5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="AreaNameLabel" destination="haQ-JS-G7S" id="4dI-2o-tYH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pro-N4-5Hl" id="n1Y-1v-hLw"/>
+                                    <outlet property="delegate" destination="pro-N4-5Hl" id="c5k-6D-AwC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.84363096952438354" blue="0.39612064264164587" alpha="0.64886558219178081" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YTZ-eV-6Xb" firstAttribute="centerX" secondItem="Z2z-Rx-gDb" secondAttribute="centerX" id="4FO-eg-AYz"/>
+                            <constraint firstItem="M9U-8t-pnF" firstAttribute="leading" secondItem="5FT-qP-foJ" secondAttribute="leading" constant="30" id="81Y-Oj-q1U"/>
+                            <constraint firstItem="YTZ-eV-6Xb" firstAttribute="top" secondItem="M9U-8t-pnF" secondAttribute="bottom" constant="45" id="CcC-xV-bTU"/>
+                            <constraint firstItem="4dX-8I-24A" firstAttribute="top" secondItem="M9U-8t-pnF" secondAttribute="bottom" constant="15" id="Gag-cp-v4F"/>
+                            <constraint firstItem="5FT-qP-foJ" firstAttribute="trailing" secondItem="4dX-8I-24A" secondAttribute="trailing" constant="30" id="HZ7-iv-Txg"/>
+                            <constraint firstItem="5FT-qP-foJ" firstAttribute="trailing" secondItem="M9U-8t-pnF" secondAttribute="trailing" constant="30" id="Ldh-fe-cAi"/>
+                            <constraint firstItem="4dX-8I-24A" firstAttribute="centerX" secondItem="Z2z-Rx-gDb" secondAttribute="centerX" id="OKg-xL-50G"/>
+                            <constraint firstItem="M9U-8t-pnF" firstAttribute="centerX" secondItem="Z2z-Rx-gDb" secondAttribute="centerX" id="UEM-vY-QIA"/>
+                            <constraint firstItem="YTZ-eV-6Xb" firstAttribute="width" secondItem="lht-oh-1pT" secondAttribute="width" id="Zva-Bc-Jen"/>
+                            <constraint firstItem="YTZ-eV-6Xb" firstAttribute="height" secondItem="Z2z-Rx-gDb" secondAttribute="height" multiplier="1:2" id="cCn-8u-UsA"/>
+                            <constraint firstItem="YTZ-eV-6Xb" firstAttribute="width" secondItem="4dX-8I-24A" secondAttribute="width" id="fEZ-4d-7ZH"/>
+                            <constraint firstItem="M9U-8t-pnF" firstAttribute="top" secondItem="5FT-qP-foJ" secondAttribute="top" constant="69" id="kdx-iy-kql"/>
+                            <constraint firstItem="4dX-8I-24A" firstAttribute="leading" secondItem="5FT-qP-foJ" secondAttribute="leading" constant="30" id="o5a-yW-IMn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5FT-qP-foJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="provinceDropdownButton" destination="XN1-sk-4fz" id="gF0-JB-9Hx"/>
+                        <outlet property="provinceDropdownTextFlied" destination="lht-oh-1pT" id="bbW-KL-4wh"/>
+                        <outlet property="provinceDropdownView" destination="4dX-8I-24A" id="elD-XG-tjn"/>
+                        <outlet property="tableView" destination="YTZ-eV-6Xb" id="8Bt-oT-d1F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goc-mM-T1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.399999999999999" y="-22.167487684729064"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close-btn" width="24" height="24"/>
+    </resources>
+</document>

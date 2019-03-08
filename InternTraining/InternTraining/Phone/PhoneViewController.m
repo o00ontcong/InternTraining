@@ -133,6 +133,13 @@
     [self presentViewController:vc animated:YES completion:NULL];
 }
 
+- (IBAction)didPressContactAreaButton:(UIButton *)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"ContactArea" bundle:nil];
+    UIViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"ContactAreaViewController"];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:vc animated:YES completion:NULL];
+}
+
 -(void)openConnection{
     path = [NSTemporaryDirectory() stringByAppendingPathComponent:databaseName];
     phonedb = [FMDatabase databaseWithPath:path];

@@ -19,6 +19,7 @@
 		8AB2835A2230BA9B00861125 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB283582230BA9B00861125 /* ShopTableViewCell.m */; };
 		8AB2835B2230BA9B00861125 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB283592230BA9B00861125 /* ShopTableViewCell.xib */; };
 		8AB2835F2230BB0600861125 /* AddLaptopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AB2835E2230BB0600861125 /* AddLaptopViewController.m */; };
+		9355153022311ACE005C1B71 /* ProvinceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */; };
 		9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695842228D07800F5AC05 /* FMDatabasePool.m */; };
 		935695902228D07900F5AC05 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695852228D07800F5AC05 /* FMDatabaseQueue.m */; };
 		935695912228D07900F5AC05 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 935695872228D07900F5AC05 /* FMDatabase.m */; };
@@ -30,6 +31,9 @@
 		93944EF9222E295200F7F835 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EF8222E295200F7F835 /* Phone.m */; };
 		93944EFC222E2DBD00F7F835 /* AddPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EFB222E2DBD00F7F835 /* AddPhoneViewController.m */; };
 		93944EFF222E38AA00F7F835 /* PhoneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EFE222E38AA00F7F835 /* PhoneCollectionViewCell.m */; };
+		9395112C2230BCC000D0659A /* ContactArea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9395112B2230BCC000D0659A /* ContactArea.storyboard */; };
+		9395112F2230BCDC00D0659A /* ContactAreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9395112E2230BCDC00D0659A /* ContactAreaViewController.m */; };
+		939511322230F82A00D0659A /* 1051_2880_DMSCoreDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 939511312230DB0C00D0659A /* 1051_2880_DMSCoreDatabase.sqlite */; };
 		93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BDDF0421F5605800F8B4DB /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,8 @@
 		8AB283592230BA9B00861125 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		8AB2835D2230BB0600861125 /* AddLaptopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddLaptopViewController.h; sourceTree = "<group>"; };
 		8AB2835E2230BB0600861125 /* AddLaptopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddLaptopViewController.m; sourceTree = "<group>"; };
+		9355152E22311ACE005C1B71 /* ProvinceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProvinceTableViewCell.h; sourceTree = "<group>"; };
+		9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProvinceTableViewCell.m; sourceTree = "<group>"; };
 		935695832228D07800F5AC05 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		935695842228D07800F5AC05 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		935695852228D07800F5AC05 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
@@ -77,6 +83,10 @@
 		93944EFB222E2DBD00F7F835 /* AddPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPhoneViewController.m; sourceTree = "<group>"; };
 		93944EFD222E38AA00F7F835 /* PhoneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneCollectionViewCell.h; sourceTree = "<group>"; };
 		93944EFE222E38AA00F7F835 /* PhoneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneCollectionViewCell.m; sourceTree = "<group>"; };
+		9395112B2230BCC000D0659A /* ContactArea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactArea.storyboard; sourceTree = "<group>"; };
+		9395112D2230BCDC00D0659A /* ContactAreaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactAreaViewController.h; sourceTree = "<group>"; };
+		9395112E2230BCDC00D0659A /* ContactAreaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactAreaViewController.m; sourceTree = "<group>"; };
+		939511312230DB0C00D0659A /* 1051_2880_DMSCoreDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1051_2880_DMSCoreDatabase.sqlite; sourceTree = "<group>"; };
 		93BDDF0321F5605800F8B4DB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		93BDDF0421F5605800F8B4DB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				8AB2834C2230B89C00861125 /* ShopLaptop */,
+				939511302230BCE400D0659A /* ContactArea */,
 				93944EF6222E253B00F7F835 /* Phone */,
 				935695952228D08400F5AC05 /* fmdb */,
 				488B2A8321EED5B900C2167B /* AppDelegate.h */,
@@ -123,6 +134,7 @@
 				488B2A8E21EED5BA00C2167B /* LaunchScreen.storyboard */,
 				488B2A9121EED5BA00C2167B /* Info.plist */,
 				488B2A9221EED5BA00C2167B /* main.m */,
+				939511312230DB0C00D0659A /* 1051_2880_DMSCoreDatabase.sqlite */,
 				9373081221F16DB0001133D2 /* SignUpViewController.h */,
 				9373081321F16DB0001133D2 /* SignUpViewController.m */,
 				93BDDF0321F5605800F8B4DB /* LoginViewController.h */,
@@ -207,6 +219,18 @@
 			path = Phone;
 			sourceTree = "<group>";
 		};
+		939511302230BCE400D0659A /* ContactArea */ = {
+			isa = PBXGroup;
+			children = (
+				9395112B2230BCC000D0659A /* ContactArea.storyboard */,
+				9395112D2230BCDC00D0659A /* ContactAreaViewController.h */,
+				9395112E2230BCDC00D0659A /* ContactAreaViewController.m */,
+				9355152E22311ACE005C1B71 /* ProvinceTableViewCell.h */,
+				9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */,
+			);
+			path = ContactArea;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,12 +288,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939511322230F82A00D0659A /* 1051_2880_DMSCoreDatabase.sqlite in Resources */,
 				488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */,
 				93944EF5222E253700F7F835 /* Phone.storyboard in Resources */,
 				488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */,
 				488B2A8B21EED5B900C2167B /* Main.storyboard in Resources */,
 				8AB2834E2230B8BA00861125 /* ShopLaptop.storyboard in Resources */,
 				8AB2835B2230BA9B00861125 /* ShopTableViewCell.xib in Resources */,
+				9395112C2230BCC000D0659A /* ContactArea.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93944EFC222E2DBD00F7F835 /* AddPhoneViewController.m in Sources */,
+				9395112F2230BCDC00D0659A /* ContactAreaViewController.m in Sources */,
 				93944EF9222E295200F7F835 /* Phone.m in Sources */,
 				488B2A8821EED5B900C2167B /* ViewController.m in Sources */,
 				9356958F2228D07900F5AC05 /* FMDatabasePool.m in Sources */,
@@ -294,6 +321,7 @@
 				8AB2835A2230BA9B00861125 /* ShopTableViewCell.m in Sources */,
 				935695922228D07900F5AC05 /* FMDatabaseAdditions.m in Sources */,
 				93944EFF222E38AA00F7F835 /* PhoneCollectionViewCell.m in Sources */,
+				9355153022311ACE005C1B71 /* ProvinceTableViewCell.m in Sources */,
 				488B2A8521EED5B900C2167B /* AppDelegate.m in Sources */,
 				93944EF4222E253700F7F835 /* PhoneViewController.m in Sources */,
 				93BDDF0521F5605800F8B4DB /* LoginViewController.m in Sources */,
