@@ -26,6 +26,8 @@
 		935695922228D07900F5AC05 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356958A2228D07900F5AC05 /* FMDatabaseAdditions.m */; };
 		935695932228D07900F5AC05 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9356958D2228D07900F5AC05 /* FMResultSet.m */; };
 		9373081421F16DB0001133D2 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373081321F16DB0001133D2 /* SignUpViewController.m */; };
+		937661D92232242E004A1600 /* province-district.sql in Resources */ = {isa = PBXBuildFile; fileRef = 937661D72232242D004A1600 /* province-district.sql */; };
+		937661DA2232242E004A1600 /* Price.sql in Resources */ = {isa = PBXBuildFile; fileRef = 937661D82232242E004A1600 /* Price.sql */; };
 		93944EF4222E253700F7F835 /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EF1222E253700F7F835 /* PhoneViewController.m */; };
 		93944EF5222E253700F7F835 /* Phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93944EF2222E253700F7F835 /* Phone.storyboard */; };
 		93944EF9222E295200F7F835 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 93944EF8222E295200F7F835 /* Phone.m */; };
@@ -74,6 +76,8 @@
 		935695962228D09200F5AC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9373081221F16DB0001133D2 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9373081321F16DB0001133D2 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		937661D72232242D004A1600 /* province-district.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "province-district.sql"; path = "../../../../../Downloads/province-district.sql"; sourceTree = "<group>"; };
+		937661D82232242E004A1600 /* Price.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Price.sql; sourceTree = "<group>"; };
 		93944EF1222E253700F7F835 /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 		93944EF2222E253700F7F835 /* Phone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Phone.storyboard; sourceTree = "<group>"; };
 		93944EF3222E253700F7F835 /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 			children = (
 				9395112B2230BCC000D0659A /* ContactArea.storyboard */,
 				9395112D2230BCDC00D0659A /* ContactAreaViewController.h */,
+				937661D82232242E004A1600 /* Price.sql */,
+				937661D72232242D004A1600 /* province-district.sql */,
 				9395112E2230BCDC00D0659A /* ContactAreaViewController.m */,
 				9355152E22311ACE005C1B71 /* ProvinceTableViewCell.h */,
 				9355152F22311ACE005C1B71 /* ProvinceTableViewCell.m */,
@@ -290,11 +296,13 @@
 			files = (
 				939511322230F82A00D0659A /* 1051_2880_DMSCoreDatabase.sqlite in Resources */,
 				488B2A9021EED5BA00C2167B /* LaunchScreen.storyboard in Resources */,
+				937661D92232242E004A1600 /* province-district.sql in Resources */,
 				93944EF5222E253700F7F835 /* Phone.storyboard in Resources */,
 				488B2A8D21EED5BA00C2167B /* Assets.xcassets in Resources */,
 				488B2A8B21EED5B900C2167B /* Main.storyboard in Resources */,
 				8AB2834E2230B8BA00861125 /* ShopLaptop.storyboard in Resources */,
 				8AB2835B2230BA9B00861125 /* ShopTableViewCell.xib in Resources */,
+				937661DA2232242E004A1600 /* Price.sql in Resources */,
 				9395112C2230BCC000D0659A /* ContactArea.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
